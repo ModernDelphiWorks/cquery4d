@@ -42,13 +42,13 @@ type
   TCQLFunctionsMySQL = class(TCQLFunctionAbstract)
   public
     constructor Create;
-    function Substring(const AVAlue: string; const AStart, ALength: Integer): string; override;
-    function Date(const AVAlue: string; const AFormat: string): string; overload; override;
-    function Date(const AVAlue: string): string; overload; override;
-    function Day(const AValue: string): string; override;
-    function Month(const AValue: string): string; override;
-    function Year(const AValue: string): string; override;
-    function Concat(const AValue: array of string): string; override;
+    function SubString(const AVAlue: String; const AStart, ALength: Integer): String; override;
+    function Date(const AVAlue: String; const AFormat: String): String; overload; override;
+    function Date(const AVAlue: String): String; overload; override;
+    function Day(const AValue: String): String; override;
+    function Month(const AValue: String): String; override;
+    function Year(const AValue: String): String; override;
+    function Concat(const AValue: array of String): String; override;
   end;
 
 implementation
@@ -59,7 +59,7 @@ uses
 
 { TCQLFunctionsMySQL }
 
-function TCQLFunctionsMySQL.Concat(const AValue: array of string): string;
+function TCQLFunctionsMySQL.Concat(const AValue: array of String): String;
 var
   LFor: Integer;
   LIni: Integer;
@@ -85,33 +85,33 @@ begin
   inherited;
 end;
 
-function TCQLFunctionsMySQL.Date(const AVAlue: string; const AFormat: string): string;
+function TCQLFunctionsMySQL.Date(const AVAlue: String; const AFormat: String): String;
 begin
   Result := 'DATE_FORMAT(' + AValue + ', ' + AFormat + ')';
 end;
 
-function TCQLFunctionsMySQL.Date(const AVAlue: string): string;
+function TCQLFunctionsMySQL.Date(const AVAlue: String): String;
 begin
   Result := 'DATE_FORMAT(' + AValue + ', ''yyyy-MM-dd'')';
 end;
 
-function TCQLFunctionsMySQL.Substring(const AVAlue: string; const AStart,
-  ALength: Integer): string;
+function TCQLFunctionsMySQL.SubString(const AVAlue: String; const AStart,
+  ALength: Integer): String;
 begin
-  Result := 'SUBSTRING(' + AValue + ', ' + IntToStr(AStart) + ', ' + IntToStr(ALength) + ')';
+  Result := 'SUBString(' + AValue + ', ' + IntToStr(AStart) + ', ' + IntToStr(ALength) + ')';
 end;
 
-function TCQLFunctionsMySQL.Day(const AValue: string): string;
+function TCQLFunctionsMySQL.Day(const AValue: String): String;
 begin
   Result := 'DAY(' + AValue + ')';
 end;
 
-function TCQLFunctionsMySQL.Month(const AValue: string): string;
+function TCQLFunctionsMySQL.Month(const AValue: String): String;
 begin
   Result := 'MONTH(' + AValue + ')';
 end;
 
-function TCQLFunctionsMySQL.Year(const AValue: string): string;
+function TCQLFunctionsMySQL.Year(const AValue: String): String;
 begin
   Result := 'YEAR(' + AValue + ')';
 end;

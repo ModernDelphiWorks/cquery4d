@@ -42,7 +42,7 @@ uses
 type
   TCQLSelectQualifiersFirebird = class(TCQLSelectQualifiers)
   public
-    function SerializePagination: string; override;
+    function SerializePagination: String; override;
     class function New: TCQLSelectQualifiersFirebird;
   end;
 
@@ -58,11 +58,11 @@ begin
   Result := Self.Create;
 end;
 
-function TCQLSelectQualifiersFirebird.SerializePagination: string;
+function TCQLSelectQualifiersFirebird.SerializePagination: String;
 var
   LFor: Integer;
-  LFirst: string;
-  LSkip: string;
+  LFirst: String;
+  LSkip: String;
 begin
   Result := '';
   for LFor := 0 to Count -1 do

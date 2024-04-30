@@ -43,7 +43,7 @@ end;
 
 procedure TTestCQLOperatorsLess.TestLessEqualThanFloat;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR <= 10.9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -56,7 +56,7 @@ end;
 
 procedure TTestCQLOperatorsLess.TestLessEqualThanInteger;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR <= 10)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -69,7 +69,7 @@ end;
 
 procedure TTestCQLOperatorsLess.TestLessThanFloat;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR < 10.9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -82,7 +82,7 @@ end;
 
 procedure TTestCQLOperatorsLess.TestLessThanInteger;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR < 10)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

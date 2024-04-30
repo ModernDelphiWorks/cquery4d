@@ -42,7 +42,7 @@ end;
 
 procedure TTestCQLBrOperatorsLike.TestLikeFull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME LIKE ''%VALUE%'')';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -55,7 +55,7 @@ end;
 
 procedure TTestCQLBrOperatorsLike.TestLikeRight;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME LIKE ''VALUE%'')';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -68,7 +68,7 @@ end;
 
 procedure TTestCQLBrOperatorsLike.TestLikeLeft;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME LIKE ''%VALUE'')';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -81,7 +81,7 @@ end;
 
 procedure TTestCQLBrOperatorsLike.TestNotLikeFull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME NOT LIKE ''%VALUE%'')';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -94,7 +94,7 @@ end;
 
 procedure TTestCQLBrOperatorsLike.TestNotLikeRight;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME NOT LIKE ''VALUE%'')';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -107,7 +107,7 @@ end;
 
 procedure TTestCQLBrOperatorsLike.TestNotLikeLeft;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME NOT LIKE ''%VALUE'')';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)

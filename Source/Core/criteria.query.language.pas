@@ -85,8 +85,8 @@ type
     procedure _DefineSectionGroupBy;
     procedure _DefineSectionHaving;
     procedure _DefineSectionOrderBy;
-    function _CreateJoin(AjoinType: TJoinType; const ATableName: string): ICQL;
-    function _InternalSet(const AColumnName, AColumnValue: string): ICQL;
+    function _CreateJoin(AjoinType: TJoinType; const ATableName: String): ICQL;
+    function _InternalSet(const AColumnName, AColumnValue: String): ICQL;
   strict private
     class var FDatabaseDafault: TDBName;
   protected
@@ -96,79 +96,79 @@ type
     class function New: ICQL; overload;
     class procedure SetDatabaseDafault(const ADatabase: TDBName);
     function &And(const AExpression: array of const): ICQL; overload;
-    function &And(const AExpression: string): ICQL; overload;
+    function &And(const AExpression: String): ICQL; overload;
     function &And(const AExpression: ICQLCriteriaExpression): ICQL; overload;
-    function &As(const AAlias: string): ICQL;
-    function &Case(const AExpression: string = ''): ICQLCriteriaCase; overload;
+    function &As(const AAlias: String): ICQL;
+    function &Case(const AExpression: String = ''): ICQLCriteriaCase; overload;
     function &Case(const AExpression: array of const): ICQLCriteriaCase; overload;
     function &Case(const AExpression: ICQLCriteriaExpression): ICQLCriteriaCase; overload;
     function Clear: ICQL;
     function ClearAll: ICQL;
     function All: ICQL;
-    function Column(const AColumnName: string = ''): ICQL; overload;
-    function Column(const ATableName: string; const AColumnName: string): ICQL; overload;
+    function Column(const AColumnName: String = ''): ICQL; overload;
+    function Column(const ATableName: String; const AColumnName: String): ICQL; overload;
     function Column(const AColumnsName: array of const): ICQL; overload;
     function Column(const ACaseExpression: ICQLCriteriaCase): ICQL; overload;
     function Delete: ICQL;
     function Desc: ICQL;
     function Distinct: ICQL;
     function IsEmpty: Boolean;
-    function Expression(const ATerm: string = ''): ICQLCriteriaExpression; overload;
+    function Expression(const ATerm: String = ''): ICQLCriteriaExpression; overload;
     function Expression(const ATerm: array of const): ICQLCriteriaExpression; overload;
     function From(const AExpression: ICQLCriteriaExpression): ICQL; overload;
     function From(const AQuery: ICQL): ICQL; overload;
-    function From(const ATableName: string): ICQL; overload;
-    function From(const ATableName: string; const AAlias: string): ICQL; overload;
-    function GroupBy(const AColumnName: string = ''): ICQL;
-    function Having(const AExpression: string = ''): ICQL; overload;
+    function From(const ATableName: String): ICQL; overload;
+    function From(const ATableName: String; const AAlias: String): ICQL; overload;
+    function GroupBy(const AColumnName: String = ''): ICQL;
+    function Having(const AExpression: String = ''): ICQL; overload;
     function Having(const AExpression: array of const): ICQL; overload;
     function Having(const AExpression: ICQLCriteriaExpression): ICQL; overload;
     function Insert: ICQL;
-    function Into(const ATableName: string): ICQL;
-    function FullJoin(const ATableName: string): ICQL; overload;
-    function InnerJoin(const ATableName: string): ICQL; overload;
-    function LeftJoin(const ATableName: string): ICQL; overload;
-    function RightJoin(const ATableName: string): ICQL; overload;
-    function FullJoin(const ATableName: string; const AAlias: string): ICQL; overload;
-    function InnerJoin(const ATableName: string; const AAlias: string): ICQL; overload;
-    function LeftJoin(const ATableName: string; const AAlias: string): ICQL; overload;
-    function RightJoin(const ATableName: string; const AAlias: string): ICQL; overload;
-    function &On(const AExpression: string): ICQL; overload;
+    function Into(const ATableName: String): ICQL;
+    function FullJoin(const ATableName: String): ICQL; overload;
+    function InnerJoin(const ATableName: String): ICQL; overload;
+    function LeftJoin(const ATableName: String): ICQL; overload;
+    function RightJoin(const ATableName: String): ICQL; overload;
+    function FullJoin(const ATableName: String; const AAlias: String): ICQL; overload;
+    function InnerJoin(const ATableName: String; const AAlias: String): ICQL; overload;
+    function LeftJoin(const ATableName: String; const AAlias: String): ICQL; overload;
+    function RightJoin(const ATableName: String; const AAlias: String): ICQL; overload;
+    function &On(const AExpression: String): ICQL; overload;
     function &On(const AExpression: array of const): ICQL; overload;
     function &Or(const AExpression: array of const): ICQL; overload;
-    function &Or(const AExpression: string): ICQL; overload;
+    function &Or(const AExpression: String): ICQL; overload;
     function &Or(const AExpression: ICQLCriteriaExpression): ICQL; overload;
-    function OrderBy(const AColumnName: string = ''): ICQL; overload;
+    function OrderBy(const AColumnName: String = ''): ICQL; overload;
     function OrderBy(const ACaseExpression: ICQLCriteriaCase): ICQL; overload;
-    function Select(const AColumnName: string = ''): ICQL; overload;
+    function Select(const AColumnName: String = ''): ICQL; overload;
     function Select(const ACaseExpression: ICQLCriteriaCase): ICQL; overload;
-    function &Set(const AColumnName, AColumnValue: string): ICQL; overload;
-    function &Set(const AColumnName: string; AColumnValue: Integer): ICQL; overload;
-    function &Set(const AColumnName: string; AColumnValue: Extended; ADecimalPlaces: Integer): ICQL; overload;
-    function &Set(const AColumnName: string; AColumnValue: Double; ADecimalPlaces: Integer): ICQL; overload;
-    function &Set(const AColumnName: string; AColumnValue: Currency; ADecimalPlaces: Integer): ICQL; overload;
-    function &Set(const AColumnName: string; const AColumnValue: array of const): ICQL; overload;
-    function &Set(const AColumnName: string; const AColumnValue: TDate): ICQL; overload;
-    function &Set(const AColumnName: string; const AColumnValue: TDateTime): ICQL; overload;
-    function &Set(const AColumnName: string; const AColumnValue: TGUID): ICQL; overload;
-    function Values(const AColumnName, AColumnValue: string): ICQL; overload;
-    function Values(const AColumnName: string; const AColumnValue: array of const): ICQL; overload;
+    function &Set(const AColumnName, AColumnValue: String): ICQL; overload;
+    function &Set(const AColumnName: String; AColumnValue: Integer): ICQL; overload;
+    function &Set(const AColumnName: String; AColumnValue: Extended; ADecimalPlaces: Integer): ICQL; overload;
+    function &Set(const AColumnName: String; AColumnValue: Double; ADecimalPlaces: Integer): ICQL; overload;
+    function &Set(const AColumnName: String; AColumnValue: Currency; ADecimalPlaces: Integer): ICQL; overload;
+    function &Set(const AColumnName: String; const AColumnValue: array of const): ICQL; overload;
+    function &Set(const AColumnName: String; const AColumnValue: TDate): ICQL; overload;
+    function &Set(const AColumnName: String; const AColumnValue: TDateTime): ICQL; overload;
+    function &Set(const AColumnName: String; const AColumnValue: TGUID): ICQL; overload;
+    function Values(const AColumnName, AColumnValue: String): ICQL; overload;
+    function Values(const AColumnName: String; const AColumnValue: array of const): ICQL; overload;
     function First(const AValue: Integer): ICQL;
     function Skip(const AValue: Integer): ICQL;
     function Limit(const AValue: Integer): ICQL;
     function Offset(const AValue: Integer): ICQL;
-    function Update(const ATableName: string): ICQL;
-    function Where(const AExpression: string = ''): ICQL; overload;
+    function Update(const ATableName: String): ICQL;
+    function Where(const AExpression: String = ''): ICQL; overload;
     function Where(const AExpression: array of const): ICQL; overload;
     function Where(const AExpression: ICQLCriteriaExpression): ICQL; overload;
     // Operators methods
-    function Equal(const AValue: string = ''): ICQL; overload;
+    function Equal(const AValue: String = ''): ICQL; overload;
     function Equal(const AValue: Extended): ICQL overload;
     function Equal(const AValue: Integer): ICQL; overload;
     function Equal(const AValue: TDate): ICQL; overload;
     function Equal(const AValue: TDateTime): ICQL; overload;
     function Equal(const AValue: TGUID): ICQL; overload;
-    function NotEqual(const AValue: string = ''): ICQL; overload;
+    function NotEqual(const AValue: String = ''): ICQL; overload;
     function NotEqual(const AValue: Extended): ICQL; overload;
     function NotEqual(const AValue: Integer): ICQL; overload;
     function NotEqual(const AValue: TDate): ICQL; overload;
@@ -192,38 +192,38 @@ type
     function LessEqThan(const AValue: TDateTime) : ICQL; overload;
     function IsNull: ICQL;
     function IsNotNull: ICQL;
-    function Like(const AValue: string): ICQL;
-    function LikeFull(const AValue: string): ICQL;
-    function LikeLeft(const AValue: string): ICQL;
-    function LikeRight(const AValue: string): ICQL;
-    function NotLike(const AValue: string): ICQL;
-    function NotLikeFull(const AValue: string): ICQL;
-    function NotLikeLeft(const AValue: string): ICQL;
-    function NotLikeRight(const AValue: string): ICQL;
+    function Like(const AValue: String): ICQL;
+    function LikeFull(const AValue: String): ICQL;
+    function LikeLeft(const AValue: String): ICQL;
+    function LikeRight(const AValue: String): ICQL;
+    function NotLike(const AValue: String): ICQL;
+    function NotLikeFull(const AValue: String): ICQL;
+    function NotLikeLeft(const AValue: String): ICQL;
+    function NotLikeRight(const AValue: String): ICQL;
 
     function &In(const AValue: TArray<Double>): ICQL; overload;
     function &In(const AValue: TArray<String>): ICQL; overload;
-    function &In(const AValue: string): ICQL; overload;
+    function &In(const AValue: String): ICQL; overload;
     function NotIn(const AValue: TArray<Double>): ICQL; overload;
     function NotIn(const AValue: TArray<String>): ICQL; overload;
-    function NotIn(const AValue: string): ICQL; overload;
-    function Exists(const AValue: string): ICQL; overload;
-    function NotExists(const AValue: string): ICQL; overload;
+    function NotIn(const AValue: String): ICQL; overload;
+    function Exists(const AValue: String): ICQL; overload;
+    function NotExists(const AValue: String): ICQL; overload;
     // Functions methods
     function Count: ICQL;
     function Lower: ICQL;
     function Min: ICQL;
     function Max: ICQL;
     function Upper: ICQL;
-    function Substring(const AStart: Integer; const ALength: Integer): ICQL;
-    function Date(const AValue: string): ICQL;
-    function Day(const AValue: string): ICQL;
-    function Month(const AValue: string): ICQL;
-    function Year(const AValue: string): ICQL;
-    function Concat(const AValue: array of string): ICQL;
+    function SubString(const AStart: Integer; const ALength: Integer): ICQL;
+    function Date(const AValue: String): ICQL;
+    function Day(const AValue: String): ICQL;
+    function Month(const AValue: String): ICQL;
+    function Year(const AValue: String): ICQL;
+    function Concat(const AValue: array of String): ICQL;
     // Result full command sql
     function AsFun: ICQLFunctions;
-    function AsString: string;
+    function AsString: String;
   end;
 
 implementation
@@ -233,7 +233,7 @@ uses
 
 { TCQL }
 
-function TCQL.&As(const AAlias: string): ICQL;
+function TCQL.&As(const AAlias: String): ICQL;
 begin
   _AssertSection([secSelect, secDelete, secJoin]);
   _AssertHaveName;
@@ -246,9 +246,9 @@ begin
   Result := FFunction;
 end;
 
-function TCQL.&Case(const AExpression: string): ICQLCriteriaCase;
+function TCQL.&Case(const AExpression: String): ICQLCriteriaCase;
 var
-  LExpression: string;
+  LExpression: String;
 begin
   LExpression := AExpression;
   if LExpression = '' then
@@ -276,7 +276,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.&And(const AExpression: string): ICQL;
+function TCQL.&And(const AExpression: String): ICQL;
 begin
   FActiveOperator := opeAND;
   FActiveExpr.&And(AExpression);
@@ -293,7 +293,7 @@ begin
   Result := &Or(TUtils.SqlParamsToStr(AExpression));
 end;
 
-function TCQL.&Or(const AExpression: string): ICQL;
+function TCQL.&Or(const AExpression: String): ICQL;
 begin
   FActiveOperator := opeOR;
   FActiveExpr.&Or(AExpression);
@@ -307,17 +307,17 @@ begin
   Result := Self;
 end;
 
-function TCQL.&Set(const AColumnName: string; const AColumnValue: array of const): ICQL;
+function TCQL.&Set(const AColumnName: String; const AColumnValue: array of const): ICQL;
 begin
   Result := _InternalSet(AColumnName, TUtils.SqlParamsToStr(AColumnValue));
 end;
 
-function TCQL.&Set(const AColumnName, AColumnValue: string): ICQL;
+function TCQL.&Set(const AColumnName, AColumnValue: String): ICQL;
 begin
   Result := _InternalSet(AColumnName, QuotedStr(AColumnValue));
 end;
 
-function TCQL.&On(const AExpression: string): ICQL;
+function TCQL.&On(const AExpression: String): ICQL;
 begin
   Result := &And(AExpression);
 end;
@@ -332,19 +332,19 @@ begin
   Result := &On(TUtils.SqlParamsToStr(AExpression));
 end;
 
-function TCQL.&In(const AValue: string): ICQL;
+function TCQL.&In(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsIn(AValue));
   Result := Self;
 end;
 
-function TCQL.&Set(const AColumnName: string; AColumnValue: Integer): ICQL;
+function TCQL.&Set(const AColumnName: String; AColumnValue: Integer): ICQL;
 begin
   Result := _InternalSet(AColumnName, IntToStr(AColumnValue));
 end;
 
-function TCQL.&Set(const AColumnName: string; AColumnValue: Extended; ADecimalPlaces: Integer): ICQL;
+function TCQL.&Set(const AColumnName: String; AColumnValue: Extended; ADecimalPlaces: Integer): ICQL;
 var
   LFormat: TFormatSettings;
 begin
@@ -352,7 +352,7 @@ begin
   Result := _InternalSet(AColumnName, Format('%.' + IntToStr(ADecimalPlaces) + 'f', [AColumnValue], LFormat));
 end;
 
-function TCQL.&Set(const AColumnName: string; AColumnValue: Double; ADecimalPlaces: Integer): ICQL;
+function TCQL.&Set(const AColumnName: String; AColumnValue: Double; ADecimalPlaces: Integer): ICQL;
 var
   LFormat: TFormatSettings;
 begin
@@ -360,7 +360,7 @@ begin
   Result := _InternalSet(AColumnName, Format('%.' + IntToStr(ADecimalPlaces) + 'f', [AColumnValue], LFormat));
 end;
 
-function TCQL.&Set(const AColumnName: string; AColumnValue: Currency; ADecimalPlaces: Integer): ICQL;
+function TCQL.&Set(const AColumnName: String; AColumnValue: Currency; ADecimalPlaces: Integer): ICQL;
 var
   LFormat: TFormatSettings;
 begin
@@ -368,19 +368,19 @@ begin
   Result := _InternalSet(AColumnName, Format('%.' + IntToStr(ADecimalPlaces) + 'f', [AColumnValue], LFormat));
 end;
 
-function TCQL.&Set(const AColumnName: string;
+function TCQL.&Set(const AColumnName: String;
   const AColumnValue: TDate): ICQL;
 begin
   Result := _InternalSet(AColumnName, QuotedStr(TUtils.DateToSQLFormat(FDatabase, AColumnValue)));
 end;
 
-function TCQL.&Set(const AColumnName: string;
+function TCQL.&Set(const AColumnName: String;
   const AColumnValue: TDateTime): ICQL;
 begin
   Result := _InternalSet(AColumnName, QuotedStr(TUtils.DateTimeToSQLFormat(FDatabase, AColumnValue)));
 end;
 
-function TCQL.&Set(const AColumnName: string;
+function TCQL.&Set(const AColumnName: String;
   const AColumnValue: TGUID): ICQL;
 begin
   Result := _InternalSet(AColumnName, TUtils.GuidStrToSQLFormat(FDatabase, AColumnValue));
@@ -417,13 +417,13 @@ begin
     raise Exception.Create('TCQL: Not supported in this section');
 end;
 
-function TCQL.AsString: string;
+function TCQL.AsString: String;
 begin
   FActiveOperator := opeNone;
   Result := TCQLBrRegister.Serialize(FDatabase).AsString(FAST);
 end;
 
-function TCQL.Column(const AColumnName: string): ICQL;
+function TCQL.Column(const AColumnName: String): ICQL;
 begin
   if Assigned(FAST) then
   begin
@@ -435,7 +435,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Column(const ATableName: string; const AColumnName: string): ICQL;
+function TCQL.Column(const ATableName: String; const AColumnName: String): ICQL;
 begin
   Result := Column(ATableName + '.' + AColumnName);
 end;
@@ -464,7 +464,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Concat(const AValue: array of string): ICQL;
+function TCQL.Concat(const AValue: array of String): ICQL;
 begin
   _AssertSection([secSelect, secJoin, secWhere]);
   _AssertHaveName;
@@ -498,7 +498,7 @@ begin
   FFunction := TCQLFunctions.New(FDatabase);
 end;
 
-function TCQL._CreateJoin(AjoinType: TJoinType; const ATableName: string): ICQL;
+function TCQL._CreateJoin(AjoinType: TJoinType; const ATableName: String): ICQL;
 var
   LJoin: ICQLJoin;
 begin
@@ -513,7 +513,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Date(const AValue: string): ICQL;
+function TCQL.Date(const AValue: String): ICQL;
 begin
   _AssertSection([secSelect, secJoin, secWhere]);
   _AssertHaveName;
@@ -524,7 +524,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Day(const AValue: string): ICQL;
+function TCQL.Day(const AValue: String): ICQL;
 begin
   _AssertSection([secSelect, secJoin, secWhere]);
   _AssertHaveName;
@@ -651,7 +651,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Equal(const AValue: string): ICQL;
+function TCQL.Equal(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   if AValue = '' then
@@ -661,7 +661,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Exists(const AValue: string): ICQL;
+function TCQL.Exists(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsExists(AValue));
@@ -673,7 +673,7 @@ begin
   Result := Expression(TUtils.SqlParamsToStr(ATerm));
 end;
 
-function TCQL.Expression(const ATerm: string): ICQLCriteriaExpression;
+function TCQL.Expression(const ATerm: String): ICQLCriteriaExpression;
 begin
   Result := TCQLCriteriaExpression.Create(ATerm);
 end;
@@ -688,7 +688,7 @@ begin
   Result := From('(' + AQuery.AsString + ')');
 end;
 
-function TCQL.From(const ATableName: string): ICQL;
+function TCQL.From(const ATableName: String): ICQL;
 begin
   _AssertSection([secSelect, secDelete]);
   FAST.ASTName := FAST.ASTTableNames.Add;
@@ -696,7 +696,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.FullJoin(const ATableName: string): ICQL;
+function TCQL.FullJoin(const ATableName: String): ICQL;
 begin
   Result := _CreateJoin(jtFULL, ATableName);
 end;
@@ -729,7 +729,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.GroupBy(const AColumnName: string): ICQL;
+function TCQL.GroupBy(const AColumnName: String): ICQL;
 begin
   _SetSection(secGroupBy);
   if AColumnName = '' then
@@ -738,7 +738,7 @@ begin
     Result := Column(AColumnName);
 end;
 
-function TCQL.Having(const AExpression: string): ICQL;
+function TCQL.Having(const AExpression: String): ICQL;
 begin
   _SetSection(secHaving);
   if AExpression = '' then
@@ -758,12 +758,12 @@ begin
   Result := &And(AExpression);
 end;
 
-function TCQL.InnerJoin(const ATableName: string): ICQL;
+function TCQL.InnerJoin(const ATableName: String): ICQL;
 begin
   Result := _CreateJoin(jtINNER, ATableName);
 end;
 
-function TCQL.InnerJoin(const ATableName, AAlias: string): ICQL;
+function TCQL.InnerJoin(const ATableName, AAlias: String): ICQL;
 begin
   InnerJoin(ATableName).&As(AAlias);
   Result := Self;
@@ -775,7 +775,7 @@ begin
   Result := Self;
 end;
 
-function TCQL._InternalSet(const AColumnName, AColumnValue: string): ICQL;
+function TCQL._InternalSet(const AColumnName, AColumnValue: String): ICQL;
 var
   LPair: ICQLNameValue;
 begin
@@ -786,7 +786,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Into(const ATableName: string): ICQL;
+function TCQL.Into(const ATableName: String): ICQL;
 begin
   _AssertSection([secInsert]);
   FAST.Insert.TableName := ATableName;
@@ -826,12 +826,12 @@ begin
   Result := Self;
 end;
 
-function TCQL.LeftJoin(const ATableName: string): ICQL;
+function TCQL.LeftJoin(const ATableName: String): ICQL;
 begin
   Result := _CreateJoin(jtLEFT, ATableName);
 end;
 
-function TCQL.LeftJoin(const ATableName, AAlias: string): ICQL;
+function TCQL.LeftJoin(const ATableName, AAlias: String): ICQL;
 begin
   LeftJoin(ATableName).&As(AAlias);
   Result := Self;
@@ -865,28 +865,28 @@ begin
   Result := Self;
 end;
 
-function TCQL.Like(const AValue: string): ICQL;
+function TCQL.Like(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsLike(AValue));
   Result := Self;
 end;
 
-function TCQL.LikeFull(const AValue: string): ICQL;
+function TCQL.LikeFull(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsLikeFull(AValue));
   Result := Self;
 end;
 
-function TCQL.LikeLeft(const AValue: string): ICQL;
+function TCQL.LikeLeft(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsLikeLeft(AValue));
   Result := Self;
 end;
 
-function TCQL.LikeRight(const AValue: string): ICQL;
+function TCQL.LikeRight(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsLikeRight(AValue));
@@ -922,7 +922,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.Month(const AValue: string): ICQL;
+function TCQL.Month(const AValue: String): ICQL;
 begin
   _AssertSection([secSelect, secJoin, secWhere]);
   _AssertHaveName;
@@ -938,7 +938,7 @@ begin
   Result := Self.Create(ADatabase);
 end;
 
-function TCQL.NotEqual(const AValue: string): ICQL;
+function TCQL.NotEqual(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotEqual(AValue));
@@ -959,7 +959,7 @@ begin
   Result := Self;
 end;
 
-function TCQL.NotExists(const AValue: string): ICQL;
+function TCQL.NotExists(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotExists(AValue));
@@ -980,28 +980,28 @@ begin
   Result := Self;
 end;
 
-function TCQL.NotLike(const AValue: string): ICQL;
+function TCQL.NotLike(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotLike(AValue));
   Result := Self;
 end;
 
-function TCQL.NotLikeFull(const AValue: string): ICQL;
+function TCQL.NotLikeFull(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotLikeFull(AValue));
   Result := Self;
 end;
 
-function TCQL.NotLikeLeft(const AValue: string): ICQL;
+function TCQL.NotLikeLeft(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotLikeLeft(AValue));
   Result := Self;
 end;
 
-function TCQL.NotLikeRight(const AValue: string): ICQL;
+function TCQL.NotLikeRight(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotLikeRight(AValue));
@@ -1014,18 +1014,18 @@ begin
   Result := Column(ACaseExpression);
 end;
 
-function TCQL.RightJoin(const ATableName, AAlias: string): ICQL;
+function TCQL.RightJoin(const ATableName, AAlias: String): ICQL;
 begin
   RightJoin(ATableName).&As(AAlias);
   Result := Self;
 end;
 
-function TCQL.RightJoin(const ATableName: string): ICQL;
+function TCQL.RightJoin(const ATableName: String): ICQL;
 begin
   Result := _CreateJoin(jtRIGHT, ATableName);
 end;
 
-function TCQL.OrderBy(const AColumnName: string): ICQL;
+function TCQL.OrderBy(const AColumnName: String): ICQL;
 begin
   _SetSection(secOrderBy);
   if AColumnName = '' then
@@ -1034,7 +1034,7 @@ begin
     Result := Column(AColumnName);
 end;
 
-function TCQL.Select(const AColumnName: string): ICQL;
+function TCQL.Select(const AColumnName: String): ICQL;
 begin
   _SetSection(secSelect);
   if AColumnName = '' then
@@ -1092,15 +1092,15 @@ begin
   Result := Self;
 end;
 
-function TCQL.Substring(const AStart, ALength: Integer): ICQL;
+function TCQL.SubString(const AStart, ALength: Integer): ICQL;
 begin
   _AssertSection([secSelect, secDelete, secJoin]);
   _AssertHaveName;
-  FAST.ASTName.Name := FFunction.Substring(FAST.ASTName.Name, AStart, ALength);
+  FAST.ASTName.Name := FFunction.SubString(FAST.ASTName.Name, AStart, ALength);
   Result := Self;
 end;
 
-function TCQL.Update(const ATableName: string): ICQL;
+function TCQL.Update(const ATableName: String): ICQL;
 begin
   _SetSection(secUpdate);
   FAST.Update.TableName := ATableName;
@@ -1115,17 +1115,17 @@ begin
   Result := Self;
 end;
 
-function TCQL.Values(const AColumnName: string; const AColumnValue: array of const): ICQL;
+function TCQL.Values(const AColumnName: String; const AColumnValue: array of const): ICQL;
 begin
   Result := _InternalSet(AColumnName, TUtils.SqlParamsToStr(AColumnValue));
 end;
 
-function TCQL.Values(const AColumnName, AColumnValue: string): ICQL;
+function TCQL.Values(const AColumnName, AColumnValue: String): ICQL;
 begin
   Result := _InternalSet(AColumnName, QuotedStr(AColumnValue));
 end;
 
-function TCQL.Where(const AExpression: string): ICQL;
+function TCQL.Where(const AExpression: String): ICQL;
 begin
   _SetSection(secWhere);
   FActiveOperator := opeWhere;
@@ -1147,7 +1147,7 @@ begin
   Result := &And(AExpression);
 end;
 
-function TCQL.Year(const AValue: string): ICQL;
+function TCQL.Year(const AValue: String): ICQL;
 begin
   _AssertSection([secSelect, secJoin, secWhere]);
   _AssertHaveName;
@@ -1158,19 +1158,19 @@ begin
   Result := Self;
 end;
 
-function TCQL.From(const ATableName, AAlias: string): ICQL;
+function TCQL.From(const ATableName, AAlias: String): ICQL;
 begin
   From(ATableName).&As(AAlias);
   Result := Self;
 end;
 
-function TCQL.FullJoin(const ATableName, AAlias: string): ICQL;
+function TCQL.FullJoin(const ATableName, AAlias: String): ICQL;
 begin
   FullJoin(ATableName).&As(AAlias);
   Result := Self;
 end;
 
-function TCQL.NotIn(const AValue: string): ICQL;
+function TCQL.NotIn(const AValue: String): ICQL;
 begin
   _AssertOperator([opeWhere, opeAND, opeOR]);
   FActiveExpr.&Ope(FOperator.IsNotIn(AValue));

@@ -44,19 +44,19 @@ type
   TCQLInsert = class(TCQLSection, ICQLInsert)
   strict private
     FColumns: ICQLNames;
-    FTableName: string;
+    FTableName: String;
     FValues: ICQLNameValuePairs;
-    function _SerializeNameValuePairsForInsert(const APairs: ICQLNameValuePairs): string;
-    function _GetTableName: string;
-    procedure _SetTableName(const Value: string);
+    function _SerializeNameValuePairsForInsert(const APairs: ICQLNameValuePairs): String;
+    function _GetTableName: String;
+    procedure _SetTableName(const Value: String);
   public
     constructor Create;
     procedure Clear; override;
     function Columns: ICQLNames;
     function IsEmpty: Boolean; override;
     function Values: ICQLNameValuePairs;
-    function Serialize: string;
-    property TableName: string read _GetTableName write _SetTableName;
+    function Serialize: String;
+    property TableName: String read _GetTableName write _SetTableName;
   end;
 
 implementation
@@ -85,7 +85,7 @@ begin
   FValues := TCQLNameValuePairs.New;
 end;
 
-function TCQLInsert._GetTableName: string;
+function TCQLInsert._GetTableName: String;
 begin
   Result := FTableName;
 end;
@@ -95,7 +95,7 @@ begin
   Result := (TableName = '');
 end;
 
-function TCQLInsert.Serialize: string;
+function TCQLInsert.Serialize: String;
 begin
   if IsEmpty then
     Result := ''
@@ -109,11 +109,11 @@ begin
   end;
 end;
 
-function TCQLInsert._SerializeNameValuePairsForInsert(const APairs: ICQLNameValuePairs): string;
+function TCQLInsert._SerializeNameValuePairsForInsert(const APairs: ICQLNameValuePairs): String;
 var
   LFor: integer;
-  LColumns: string;
-  LValues: string;
+  LColumns: String;
+  LValues: String;
 begin
   Result := '';
   if APairs.Count = 0 then
@@ -129,7 +129,7 @@ begin
   Result := TUtils.Concat(['(', LColumns, ') VALUES (', LValues, ')'],'');
 end;
 
-procedure TCQLInsert._SetTableName(const Value: string);
+procedure TCQLInsert._SetTableName(const Value: String);
 begin
   FTableName := Value;
 end;

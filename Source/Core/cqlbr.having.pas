@@ -48,7 +48,7 @@ type
     constructor Create;
     procedure Clear; override;
     function IsEmpty: Boolean; override;
-    function Serialize: string;
+    function Serialize: String;
     property Expression: ICQLExpression read _GetExpression write _SetExpression;
   end;
 
@@ -82,7 +82,7 @@ begin
   Result := FExpression.IsEmpty;
 end;
 
-function TCQLHaving.Serialize: string;
+function TCQLHaving.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

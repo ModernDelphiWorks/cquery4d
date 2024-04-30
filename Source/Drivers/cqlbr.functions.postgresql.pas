@@ -42,13 +42,13 @@ type
   TCQLFunctionsPostgreSQL = class(TCQLFunctionAbstract)
   public
     constructor Create;
-    function Substring(const AVAlue: string; const AStart, ALength: Integer): string; override;
-    function Date(const AVAlue: string; const AFormat: string): string; overload; override;
-    function Date(const AVAlue: string): string; overload; override;
-    function Day(const AValue: string): string; override;
-    function Month(const AValue: string): string; override;
-    function Year(const AValue: string): string; override;
-    function Concat(const AValue: array of string): string; override;
+    function SubString(const AVAlue: String; const AStart, ALength: Integer): String; override;
+    function Date(const AVAlue: String; const AFormat: String): String; overload; override;
+    function Date(const AVAlue: String): String; overload; override;
+    function Day(const AValue: String): String; override;
+    function Month(const AValue: String): String; override;
+    function Year(const AValue: String): String; override;
+    function Concat(const AValue: array of String): String; override;
   end;
 
 implementation
@@ -59,7 +59,7 @@ uses
 
 { TCQLFunctionsPostgreSQL }
 
-function TCQLFunctionsPostgreSQL.Concat(const AValue: array of string): string;
+function TCQLFunctionsPostgreSQL.Concat(const AValue: array of String): String;
 var
   LFor: Integer;
   LIni: Integer;
@@ -82,33 +82,33 @@ begin
   inherited;
 end;
 
-function TCQLFunctionsPostgreSQL.Date(const AVAlue, AFormat: string): string;
+function TCQLFunctionsPostgreSQL.Date(const AVAlue, AFormat: String): String;
 begin
   Result := 'TO_DATE(' + AValue + ', ' + AFormat + ')';
 end;
 
-function TCQLFunctionsPostgreSQL.Date(const AVAlue: string): string;
+function TCQLFunctionsPostgreSQL.Date(const AVAlue: String): String;
 begin
   Result := 'TO_DATE(' + AValue + ', ''dd/MM/yyyy'')';
 end;
 
-function TCQLFunctionsPostgreSQL.Day(const AValue: string): string;
+function TCQLFunctionsPostgreSQL.Day(const AValue: String): String;
 begin
   Result := 'EXTRACT(DAY FROM ' + AValue + ')';
 end;
 
-function TCQLFunctionsPostgreSQL.Month(const AValue: string): string;
+function TCQLFunctionsPostgreSQL.Month(const AValue: String): String;
 begin
   Result := 'EXTRACT(MONTH FROM ' + AValue + ')';
 end;
 
-function TCQLFunctionsPostgreSQL.Substring(const AVAlue: string; const AStart,
-  ALength: Integer): string;
+function TCQLFunctionsPostgreSQL.SubString(const AVAlue: String; const AStart,
+  ALength: Integer): String;
 begin
-  Result := 'SUBSTRING(' + AValue + ' FROM ' + IntToStr(AStart) + ' FOR ' + IntToStr(ALength) + ')';
+  Result := 'SUBString(' + AValue + ' FROM ' + IntToStr(AStart) + ' FOR ' + IntToStr(ALength) + ')';
 end;
 
-function TCQLFunctionsPostgreSQL.Year(const AValue: string): string;
+function TCQLFunctionsPostgreSQL.Year(const AValue: String): String;
 begin
   Result := 'EXTRACT(YEAR FROM ' + AValue + ')';
 end;

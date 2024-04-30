@@ -46,9 +46,9 @@ type
   public
     constructor Create;
     procedure Clear; override;
-    function IsEmpty: boolean; override;
+    function IsEmpty: Boolean; override;
     function TableNames: ICQLNames;
-    function Serialize: string;
+    function Serialize: String;
   end;
 
 implementation
@@ -69,12 +69,12 @@ begin
   FTableNames := TCQLNames.New;
 end;
 
-function TCQLDelete.IsEmpty: boolean;
+function TCQLDelete.IsEmpty: Boolean;
 begin
   Result := FTableNames.IsEmpty;
 end;
 
-function TCQLDelete.Serialize: string;
+function TCQLDelete.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

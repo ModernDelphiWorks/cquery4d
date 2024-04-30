@@ -77,7 +77,7 @@ type
     FCaseExpression: ICQLExpression;
     FElseExpression: ICQLExpression;
     FWhenList: ICQLCaseWhenList;
-    function SerializeExpression(const AExpression: ICQLExpression): string;
+    function SerializeExpression(const AExpression: ICQLExpression): String;
     function GetCaseExpression: ICQLExpression;
     function GetElseExpression: ICQLExpression;
     function GetWhenList: ICQLCaseWhenList;
@@ -87,7 +87,7 @@ type
     constructor Create;
   public
     class function New: ICQLCase;
-    function Serialize: string; virtual;
+    function Serialize: String; virtual;
     property CaseExpression: ICQLExpression read GetCaseExpression write SetCaseExpression;
     property WhenList: ICQLCaseWhenList read GetWhenList write SetWhenList;
     property ElseExpression: ICQLExpression read GetElseExpression write SetElseExpression;
@@ -100,19 +100,19 @@ type
     FLastExpression: ICQLCriteriaExpression;
     function _GetCase: ICQLCase;
   public
-    constructor Create(const AOwner: ICQL; const AExpression: string);
+    constructor Create(const AOwner: ICQL; const AExpression: String);
     function &And(const AExpression: array of const): ICQLCriteriaCase; overload;
-    function &And(const AExpression: string): ICQLCriteriaCase; overload;
+    function &And(const AExpression: String): ICQLCriteriaCase; overload;
     function &And(const AExpression: ICQLCriteriaExpression): ICQLCriteriaCase; overload;
-    function &Else(const AValue: string): ICQLCriteriaCase; overload;
+    function &Else(const AValue: String): ICQLCriteriaCase; overload;
     function &Else(const AValue: Int64): ICQLCriteriaCase; overload;
     function &End: ICQL;
     function &Or(const AExpression: array of const): ICQLCriteriaCase; overload;
-    function &Or(const AExpression: string): ICQLCriteriaCase; overload;
+    function &Or(const AExpression: String): ICQLCriteriaCase; overload;
     function &Or(const AExpression: ICQLCriteriaExpression): ICQLCriteriaCase; overload;
-    function &Then(const AValue: string): ICQLCriteriaCase; overload;
+    function &Then(const AValue: String): ICQLCriteriaCase; overload;
     function &Then(const AValue: Int64): ICQLCriteriaCase; overload;
-    function When(const ACondition: string): ICQLCriteriaCase; overload;
+    function When(const ACondition: String): ICQLCriteriaCase; overload;
     function When(const ACondition: array of const): ICQLCriteriaCase; overload;
     function When(const ACondition: ICQLCriteriaExpression): ICQLCriteriaCase; overload;
     property &Case: ICQLCase read _GetCase;
@@ -152,7 +152,7 @@ begin
   Result := Self.Create;
 end;
 
-function TCQLCase.Serialize: string;
+function TCQLCase.Serialize: String;
 var
   LFor: Integer;
   LWhenThen: ICQLCaseWhenThen;
@@ -173,7 +173,7 @@ begin
   Result := TUtils.Concat([Result, 'END']);
 end;
 
-function TCQLCase.SerializeExpression(const AExpression: ICQLExpression): string;
+function TCQLCase.SerializeExpression(const AExpression: ICQLExpression): String;
 begin
   Result := AExpression.Serialize;
 end;
@@ -267,7 +267,7 @@ end;
 
 { TCQLCriteriaCase }
 
-function TCQLCriteriaCase.&And(const AExpression: string): ICQLCriteriaCase;
+function TCQLCriteriaCase.&And(const AExpression: String): ICQLCriteriaCase;
 begin
   FLastExpression.&And(AExpression);
   Result := Self;
@@ -279,7 +279,7 @@ begin
   Result := Self;
 end;
 
-constructor TCQLCriteriaCase.Create(const AOwner: ICQL; const AExpression: string);
+constructor TCQLCriteriaCase.Create(const AOwner: ICQL; const AExpression: String);
 begin
   FOwner := AOwner;
   FCase := TCQLCase.New;
@@ -287,7 +287,7 @@ begin
     FCase.CaseExpression.Term := AExpression;
 end;
 
-function TCQLCriteriaCase.&Else(const AValue: string): ICQLCriteriaCase;
+function TCQLCriteriaCase.&Else(const AValue: String): ICQLCriteriaCase;
 begin
   FLastExpression := TCQLCriteriaExpression.Create(AValue);
   FCase.ElseExpression := FLastExpression.Expression;
@@ -309,7 +309,7 @@ begin
   Result := FCase;
 end;
 
-function TCQLCriteriaCase.&Or(const AExpression: string): ICQLCriteriaCase;
+function TCQLCriteriaCase.&Or(const AExpression: String): ICQLCriteriaCase;
 begin
   FLastExpression.&Or(AExpression);
   Result := Self;
@@ -336,7 +336,7 @@ begin
   Result := Self;
 end;
 
-function TCQLCriteriaCase.&Then(const AValue: string): ICQLCriteriaCase;
+function TCQLCriteriaCase.&Then(const AValue: String): ICQLCriteriaCase;
 begin
   Assert(FCase.WhenList.Count > 0, 'TCQLCriteriaCase.&Then: Missing When');
   FLastExpression := TCQLCriteriaExpression.Create(AValue);
@@ -349,7 +349,7 @@ begin
   Result := When(TUtils.SqlParamsToStr(ACondition));
 end;
 
-function TCQLCriteriaCase.When(const ACondition: string): ICQLCriteriaCase;
+function TCQLCriteriaCase.When(const ACondition: String): ICQLCriteriaCase;
 begin
   Result := When(TCQLCriteriaExpression.Create(ACondition));
 end;

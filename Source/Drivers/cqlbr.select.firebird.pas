@@ -42,7 +42,7 @@ type
   TCQLSelectFirebird = class(TCQLSelect)
   public
     constructor Create; override;
-    function Serialize: string; override;
+    function Serialize: String; override;
   end;
 
 implementation
@@ -62,7 +62,7 @@ begin
   FQualifiers := TCQLSelectQualifiersFirebird.New;
 end;
 
-function TCQLSelectFirebird.Serialize: string;
+function TCQLSelectFirebird.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

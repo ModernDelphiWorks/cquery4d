@@ -42,7 +42,7 @@ type
   TCQLSelectMySQL = class(TCQLSelect)
   public
     constructor Create; override;
-    function Serialize: string; override;
+    function Serialize: String; override;
   end;
 
 implementation
@@ -61,7 +61,7 @@ begin
   FQualifiers := TCQLSelectQualifiersMySQL.New;
 end;
 
-function TCQLSelectMySQL.Serialize: string;
+function TCQLSelectMySQL.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

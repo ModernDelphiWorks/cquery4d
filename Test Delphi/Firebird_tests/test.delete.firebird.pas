@@ -39,7 +39,7 @@ end;
 
 procedure TTestCQLDelete.TestDeleteFirebird;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'DELETE FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -50,7 +50,7 @@ end;
 
 procedure TTestCQLDelete.TestDeleteWhereFirebird;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'DELETE FROM CLIENTES WHERE ID_CLIENTE = 1';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

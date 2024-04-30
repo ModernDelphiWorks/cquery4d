@@ -37,7 +37,7 @@ end;
 
 procedure TTestCQLExists.TestExistsSubQuery;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (EXISTS (SELECT IDCLIENTE FROM PEDIDOS WHERE (PEDIDOS.IDCLIENTE = CLIENTES.IDCLIENTE)))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -55,7 +55,7 @@ end;
 
 procedure TTestCQLExists.TestNotExistsSubQuery;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOT EXISTS (SELECT IDCLIENTE FROM PEDIDOS WHERE (PEDIDOS.IDCLIENTE = CLIENTES.IDCLIENTE)))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

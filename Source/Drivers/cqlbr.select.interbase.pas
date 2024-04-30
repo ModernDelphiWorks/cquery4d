@@ -42,7 +42,7 @@ type
   TCQLSelectInterbase = class(TCQLSelect)
   public
     constructor Create; override;
-    function Serialize: string; override;
+    function Serialize: String; override;
   end;
 
 implementation
@@ -62,7 +62,7 @@ begin
   FQualifiers := TCQLSelectQualifiersInterbase.New;
 end;
 
-function TCQLSelectInterbase.Serialize: string;
+function TCQLSelectInterbase.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

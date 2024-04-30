@@ -42,13 +42,13 @@ type
   TCQLFunctionsMSSQL = class(TCQLFunctionAbstract)
   public
     constructor Create;
-    function Substring(const AVAlue: string; const AStart, ALength: Integer): string; override;
-    function Date(const AVAlue: string; const AFormat: string): string; overload; override;
-    function Date(const AVAlue: string): string; overload; override;
-    function Day(const AValue: string): string; override;
-    function Month(const AValue: string): string; override;
-    function Year(const AValue: string): string; override;
-    function Concat(const AValue: array of string): string; override;
+    function SubString(const AVAlue: String; const AStart, ALength: Integer): String; override;
+    function Date(const AVAlue: String; const AFormat: String): String; overload; override;
+    function Date(const AVAlue: String): String; overload; override;
+    function Day(const AValue: String): String; override;
+    function Month(const AValue: String): String; override;
+    function Year(const AValue: String): String; override;
+    function Concat(const AValue: array of String): String; override;
   end;
 
 implementation
@@ -59,7 +59,7 @@ uses
 
 { TCQLFunctionsMSSQL }
 
-function TCQLFunctionsMSSQL.Concat(const AValue: array of string): string;
+function TCQLFunctionsMSSQL.Concat(const AValue: array of String): String;
 var
   LFor: Integer;
   LIni: Integer;
@@ -85,33 +85,33 @@ begin
   inherited;
 end;
 
-function TCQLFunctionsMSSQL.Substring(const AVAlue: string; const AStart,
-  ALength: Integer): string;
+function TCQLFunctionsMSSQL.SubString(const AVAlue: String; const AStart,
+  ALength: Integer): String;
 begin
-  Result := 'SUBSTRING(' + AValue + ', ' + IntToStr(AStart) + ', ' + IntToStr(ALength) + ')';
+  Result := 'SUBString(' + AValue + ', ' + IntToStr(AStart) + ', ' + IntToStr(ALength) + ')';
 end;
 
-function TCQLFunctionsMSSQL.Year(const AValue: string): string;
+function TCQLFunctionsMSSQL.Year(const AValue: String): String;
 begin
   Result := 'YEAR(' + AValue + ')';
 end;
 
-function TCQLFunctionsMSSQL.Date(const AVAlue, AFormat: string): string;
+function TCQLFunctionsMSSQL.Date(const AVAlue, AFormat: String): String;
 begin
   Result := FormatDateTime(AFormat, StrToDateTime(AValue));
 end;
 
-function TCQLFunctionsMSSQL.Date(const AVAlue: string): string;
+function TCQLFunctionsMSSQL.Date(const AVAlue: String): String;
 begin
   Result := AValue;
 end;
 
-function TCQLFunctionsMSSQL.Day(const AValue: string): string;
+function TCQLFunctionsMSSQL.Day(const AValue: String): String;
 begin
   Result := 'DAY(' + AValue + ')';
 end;
 
-function TCQLFunctionsMSSQL.Month(const AValue: string): string;
+function TCQLFunctionsMSSQL.Month(const AValue: String): String;
 begin
   Result := 'MONTH(' + AValue + ')';
 end;

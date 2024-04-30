@@ -67,7 +67,7 @@ type
   TCQLJoins = class(TInterfacedObject, ICQLJoins)
   strict private
     FJoins: TList<ICQLJoin>;
-    function SerializeJoinType(const AJoin: ICQLJoin): string;
+    function SerializeJoinType(const AJoin: ICQLJoin): String;
     function _GetJoins(AIdx: Integer): ICQLJoin;
     procedure _SetJoins(AIdx: Integer; const Value: ICQLJoin);
   public
@@ -78,7 +78,7 @@ type
     procedure Clear;
     function Count: Integer;
     function IsEmpty: Boolean;
-    function Serialize: string;
+    function Serialize: String;
     property Joins[AIdx: Integer]: ICQLJoin read _GetJoins write _SetJoins; default;
   end;
 
@@ -179,7 +179,7 @@ begin
   Result := (FJoins.Count = 0);
 end;
 
-function TCQLJoins.Serialize: string;
+function TCQLJoins.Serialize: String;
 var
   LFor: Integer;
   LJoin: ICQLJoin;
@@ -197,7 +197,7 @@ begin
   end;
 end;
 
-function TCQLJoins.SerializeJoinType(const AJoin: ICQLJoin): string;
+function TCQLJoins.SerializeJoinType(const AJoin: ICQLJoin): String;
 begin
   case AJoin.JoinType of
     jtINNER: Result := 'INNER';

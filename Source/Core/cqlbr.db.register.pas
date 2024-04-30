@@ -72,7 +72,7 @@ implementation
 
 const
   TStrDBName: array[dbnMSSQL..dbnNexusDB] of
-                  string = ('MSSQL','MySQL','Firebird','SQLite','Interbase','DB2',
+                  String = ('MSSQL','MySQL','Firebird','SQLite','Interbase','DB2',
                             'Oracle','Informix','PostgreSQL','ADS','ASA',
                             'AbsoluteDB','MongoDB','ElevateDB','NexusDB');
 

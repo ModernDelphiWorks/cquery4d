@@ -50,7 +50,7 @@ type
     constructor Create; virtual;
     destructor Destroy; override;
     procedure Clear; override;
-    function Serialize: string; virtual;
+    function Serialize: String; virtual;
     function IsEmpty: Boolean; override;
     property Expression: ICQLExpression read _GetExpression write _SetExpression;
   end;
@@ -88,7 +88,7 @@ begin
   Result := FExpression.IsEmpty;
 end;
 
-function TCQLWhere.Serialize: string;
+function TCQLWhere.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

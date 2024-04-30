@@ -41,22 +41,22 @@ uses
 type
   TUtils = class
   private
-    class function _AddToList(const AList, ADelimiter, ANewElement: string): string;
-    class function _VarRecToString(const AValue: TVarRec): string;
+    class function _AddToList(const AList, ADelimiter, ANewElement: String): String;
+    class function _VarRecToString(const AValue: TVarRec): String;
   public
-    class function Concat(const AElements: array of String; const ADelimiter: string = ' '): string;
-    class function SqlParamsToStr(const AParams: array of const): string;
-    class function DateToSQLFormat(const ADBName: TDBName; const AValue: TDate): string;
-    class function DateTimeToSQLFormat(const ADBName: TDBName; const AValue: TDateTime): string;
-    class function GuidStrToSQLFormat(const ADBName: TDBName; const AValue: TGUID): string;
+    class function Concat(const AElements: array of String; const ADelimiter: String = ' '): String;
+    class function SqlParamsToStr(const AParams: array of const): String;
+    class function DateToSQLFormat(const ADBName: TDBName; const AValue: TDate): String;
+    class function DateTimeToSQLFormat(const ADBName: TDBName; const AValue: TDateTime): String;
+    class function GuidStrToSQLFormat(const ADBName: TDBName; const AValue: TGUID): String;
   end;
 
 implementation
 
 class function TUtils.Concat(const AElements: array of String;
-  const ADelimiter: string): string;
+  const ADelimiter: String): String;
 var
-  LValue: string;
+  LValue: String;
 begin
   Result := '';
   for LValue in AElements do
@@ -65,7 +65,7 @@ begin
 end;
 
 class function TUtils.DateTimeToSQLFormat(const ADBName: TDBName;
-  const AValue: TDateTime): string;
+  const AValue: TDateTime): String;
 begin
   case ADBName of
     dbnFirebird,
@@ -89,7 +89,7 @@ begin
 end;
 
 class function TUtils.DateToSQLFormat(const ADBName: TDBName;
-  const AValue: TDate): string;
+  const AValue: TDate): String;
 begin
   case ADBName of
     dbnFirebird,
@@ -112,18 +112,18 @@ begin
 end;
 
 class function TUtils.GuidStrToSQLFormat(const ADBName: TDBName;
-  const AValue: TGUID): string;
+  const AValue: TGUID): String;
 begin
   case ADBName of
     dbnFirebird,
     dbnInterbase: Result := Format('CHAR_TO_UUID(''%s'')', [AValue.ToString]);
 
     else
-      raise Exception.Create('Conversão de Guid no formato string não implementada.');
+      raise Exception.Create('Conversão de Guid no formato String não implementada.');
   end;
 end;
 
-class function TUtils._AddToList(const AList, ADelimiter, ANewElement: string): string;
+class function TUtils._AddToList(const AList, ADelimiter, ANewElement: String): String;
 begin
   Result := AList;
   if Result <> '' then
@@ -131,11 +131,11 @@ begin
   Result := Result + ANewElement;
 end;
 
-class function TUtils.SqlParamsToStr(const AParams: array of const): string;
+class function TUtils.SqlParamsToStr(const AParams: array of const): String;
 var
   LFor: Integer;
   LastCh: Char;
-  LParam: string;
+  LParam: String;
 begin
   Result := '';
   for LFor := Low(AParams) to High(AParams) do
@@ -152,7 +152,7 @@ begin
   end;
 end;
 
-class function TUtils._VarRecToString(const AValue: TVarRec): string;
+class function TUtils._VarRecToString(const AValue: TVarRec): String;
 const
   BoolChars: array [Boolean] of String = ('F', 'T');
 {$IFNDEF FPC}

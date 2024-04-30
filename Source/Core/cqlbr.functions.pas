@@ -46,24 +46,24 @@ type
     constructor CreatePrivate(const ADatabase: TDBName);
   public
     class function New(const ADatabase: TDBName): ICQLFunctions;
-    class function Q(const AValue: string): string;
-    function Count(const AValue: string): string; override;
-    function Upper(const AValue: string): string; override;
-    function Lower(const AValue: string): string; override;
-    function Min(const AValue: string): string; override;
-    function Max(const AValue: string): string; override;
-    function Sum(const AValue: string): string; override;
-    function Coalesce(const AValues: array of String): string; override;
-    function Substring(const AVAlue: string; const AStart, ALength: Integer): string; override;
-    function Cast(const AExpression: string; const ADataType: string): string; override;
-    function Convert(const ADataType: string; const AExpression: string;
-      const AStyle: string): string; override;
-    function Date(const AVAlue: string; const AFormat: string): string; overload; override;
-    function Date(const AVAlue: string): string; overload; override;
-    function Day(const AValue: string): string; override;
-    function Month(const AValue: string): string; override;
-    function Year(const AValue: string): string; override;
-    function Concat(const AValue: array of string): string; override;
+    class function Q(const AValue: String): String;
+    function Count(const AValue: String): String; override;
+    function Upper(const AValue: String): String; override;
+    function Lower(const AValue: String): String; override;
+    function Min(const AValue: String): String; override;
+    function Max(const AValue: String): String; override;
+    function Sum(const AValue: String): String; override;
+    function Coalesce(const AValues: array of String): String; override;
+    function SubString(const AVAlue: String; const AStart, ALength: Integer): String; override;
+    function Cast(const AExpression: String; const ADataType: String): String; override;
+    function Convert(const ADataType: String; const AExpression: String;
+      const AStyle: String): String; override;
+    function Date(const AVAlue: String; const AFormat: String): String; overload; override;
+    function Date(const AVAlue: String): String; overload; override;
+    function Day(const AValue: String): String; override;
+    function Month(const AValue: String): String; override;
+    function Year(const AValue: String): String; override;
+    function Concat(const AValue: array of String): String; override;
   end;
 implementation
 
@@ -77,60 +77,60 @@ begin
   Result := Self.CreatePrivate(ADatabase);
 end;
 
-class function TCQLFunctions.Q(const AValue: string): string;
+class function TCQLFunctions.Q(const AValue: String): String;
 begin
   Result := '''' + AValue + '''';
 end;
 
-function TCQLFunctions.Substring(const AVAlue: string;
-  const AStart, ALength: Integer): string;
+function TCQLFunctions.SubString(const AVAlue: String;
+  const AStart, ALength: Integer): String;
 begin
-  Result := TCQLBrRegister.Functions(FDatabase).Substring(AValue, AStart, ALength);
+  Result := TCQLBrRegister.Functions(FDatabase).SubString(AValue, AStart, ALength);
 end;
 
-function TCQLFunctions.Sum(const AValue: string): string;
+function TCQLFunctions.Sum(const AValue: String): String;
 begin
   Result := 'SUM(' + AValue + ')';
 end;
 
-function TCQLFunctions.Date(const AVAlue: string): string;
+function TCQLFunctions.Date(const AVAlue: String): String;
 begin
   Result := TCQLBrRegister.Functions(FDatabase).Date(AVAlue);
 end;
 
-function TCQLFunctions.Date(const AVAlue, AFormat: string): string;
+function TCQLFunctions.Date(const AVAlue, AFormat: String): String;
 begin
   Result := TCQLBrRegister.Functions(FDatabase).Date(AVAlue, AFormat);
 end;
 
-function TCQLFunctions.Day(const AValue: string): string;
+function TCQLFunctions.Day(const AValue: String): String;
 begin
   Result := TCQLBrRegister.Functions(FDatabase).Day(AVAlue);
 end;
 
-function TCQLFunctions.Cast(const AExpression: string;
-  const ADataType: string): string;
+function TCQLFunctions.Cast(const AExpression: String;
+  const ADataType: String): String;
 begin
   Result := 'CAST(' + AExpression + ' AS ' + ADataType + ')';
 end;
 
-function TCQLFunctions.Coalesce(const AValues: array of String): string;
+function TCQLFunctions.Coalesce(const AValues: array of String): String;
 begin
   Result := '';
 end;
 
-function TCQLFunctions.Concat(const AValue: array of string): string;
+function TCQLFunctions.Concat(const AValue: array of String): String;
 begin
   Result := TCQLBrRegister.Functions(FDatabase).Concat(AVAlue);
 end;
 
-function TCQLFunctions.Convert(const ADataType: string;
-  const AExpression: string; const AStyle: string): string;
+function TCQLFunctions.Convert(const ADataType: String;
+  const AExpression: String; const AStyle: String): String;
 begin
   Result := '';
 end;
 
-function TCQLFunctions.Count(const AValue: string): string;
+function TCQLFunctions.Count(const AValue: String): String;
 begin
   Result := 'COUNT(' + AValue + ')';
 end;
@@ -140,32 +140,32 @@ begin
   FDatabase := ADatabase;
 end;
 
-function TCQLFunctions.Lower(const AValue: string): string;
+function TCQLFunctions.Lower(const AValue: String): String;
 begin
   Result := 'LOWER(' + AValue + ')';
 end;
 
-function TCQLFunctions.Max(const AValue: string): string;
+function TCQLFunctions.Max(const AValue: String): String;
 begin
   Result := 'MAX(' + AValue + ')';
 end;
 
-function TCQLFunctions.Min(const AValue: string): string;
+function TCQLFunctions.Min(const AValue: String): String;
 begin
   Result := 'MIN(' + AValue + ')';
 end;
 
-function TCQLFunctions.Month(const AValue: string): string;
+function TCQLFunctions.Month(const AValue: String): String;
 begin
   Result := TCQLBrRegister.Functions(FDatabase).Month(AVAlue);
 end;
 
-function TCQLFunctions.Upper(const AValue: string): string;
+function TCQLFunctions.Upper(const AValue: String): String;
 begin
   Result := 'UPPER(' + AValue + ')';
 end;
 
-function TCQLFunctions.Year(const AValue: string): string;
+function TCQLFunctions.Year(const AValue: String): String;
 begin
   Result := TCQLBrRegister.Functions(FDatabase).Year(AVAlue);
 end;
