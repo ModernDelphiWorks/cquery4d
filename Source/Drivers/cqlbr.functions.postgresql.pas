@@ -105,7 +105,7 @@ end;
 function TCQLFunctionsPostgreSQL.SubString(const AVAlue: String; const AStart,
   ALength: Integer): String;
 begin
-  Result := 'SUBString(' + AValue + ' FROM ' + IntToStr(AStart) + ' FOR ' + IntToStr(ALength) + ')';
+  Result := 'SUBSTRING(' + AValue + ' FROM ' + IntToStr(AStart) + ' FOR ' + IntToStr(ALength) + ')';
 end;
 
 function TCQLFunctionsPostgreSQL.Year(const AValue: String): String;
