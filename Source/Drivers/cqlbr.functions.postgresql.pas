@@ -114,6 +114,6 @@ begin
 end;
 
 initialization
-  TCQLBrRegister.RegisterFunctions(dbnDB2, TCQLFunctionsPostgreSQL.Create);
+  TCQLBrRegister.RegisterFunctions(dbnPostgreSQL, TCQLFunctionsPostgreSQL.Create);
 
 end.
