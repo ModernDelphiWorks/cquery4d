@@ -42,7 +42,7 @@ type
   TCQLSelectSQLite = class(TCQLSelect)
   public
     constructor Create; override;
-    function Serialize: string; override;
+    function Serialize: String; override;
   end;
 
 implementation
@@ -61,7 +61,7 @@ begin
   FQualifiers := TCQLSelectQualifiersSQLite.New;
 end;
 
-function TCQLSelectSQLite.Serialize: string;
+function TCQLSelectSQLite.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

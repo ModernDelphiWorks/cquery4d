@@ -26,7 +26,7 @@
   @source(Author's Website: https://www.isaquepinheiro.com.br)
 }
 
-unit cqlbr.select.mongodb;
+unit cqlbr.select.postgresql;
 
 {$ifdef fpc}
   {$mode delphi}{$H+}
@@ -39,7 +39,7 @@ uses
   cqlbr.select;
 
 type
-  TCQLSelectMongoDB = class(TCQLSelect)
+  TCQLSelectPostgreSQL = class(TCQLSelect)
   public
     constructor Create; override;
     function Serialize: String; override;
@@ -47,36 +47,33 @@ type
 
 implementation
 
-
 uses
   cqlbr.utils,
   cqlbr.register,
   cqlbr.interfaces,
-  cqlbr.qualifier.mongodb;
+  cqlbr.qualifier.postgresql;
 
-{ TCQLSelectMongoDB }
+{ TCQLSelectPostgreSQL }
 
-constructor TCQLSelectMongoDB.Create;
+constructor TCQLSelectPostgreSQL.Create;
 begin
   inherited;
-  FQualifiers := TCQLSelectQualifiersMongodb.New;
+  FQualifiers := TCQLSelectQualifiersPostgreSQL.New;
 end;
 
-function TCQLSelectMongoDB.Serialize: String;
+function TCQLSelectPostgreSQL.Serialize: String;
 begin
   if IsEmpty then
     Result := ''
   else
-  begin
-    Result := FTableNames.Serialize + '.find( {'
-            + FColumns.Serialize + '} )';
-    Result := LowerCase(Result);
-  end;
-//                             FQualifiers.SerializeDistinct,
-//                             FQualifiers.SerializePagination,
+    Result := TUtils.Concat(['SELECT',
+                             FQualifiers.SerializeDistinct,
+                             FColumns.Serialize,
+                             'FROM',
+                             FTableNames.Serialize]);
 end;
 
 initialization
-  TCQLBrRegister.RegisterSelect(dbnMongoDB, TCQLSelectMongoDB.Create);
+  TCQLBrRegister.RegisterSelect(dbnPostgreSQL, TCQLSelectPostgreSQL.Create);
 
 end.

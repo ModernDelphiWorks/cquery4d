@@ -42,7 +42,7 @@ type
   TCQLSelectOracle = class(TCQLSelect)
   public
     constructor Create; override;
-    function Serialize: string; override;
+    function Serialize: String; override;
   end;
 
 implementation
@@ -61,7 +61,7 @@ begin
   FQualifiers := TCQLSelectQualifiersOracle.New;
 end;
 
-function TCQLSelectOracle.Serialize: string;
+function TCQLSelectOracle.Serialize: String;
 begin
   if IsEmpty then
     Result := ''

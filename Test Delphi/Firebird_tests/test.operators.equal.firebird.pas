@@ -56,7 +56,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestEqualDateField;
 var
-  LAsString : string;
+  LAsString : String;
   LDate: TDate;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO = ''12/31/2021'')';
@@ -71,7 +71,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestEqualDateTimeField;
 var
-  LAsString : string;
+  LAsString : String;
   LDateTime: TDateTime;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO = ''12/31/2021 23:59:59'')';
@@ -86,7 +86,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestEqualFloatField;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR = 10.9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -99,7 +99,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestEqualIntegerField;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR = 10)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -112,7 +112,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestEqualStringField;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME = ''VALUE'')';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -125,7 +125,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestNotEqualDateField;
 var
-  LAsString : string;
+  LAsString : String;
   LDate: TDate;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO <> ''12/31/2021'')';
@@ -140,7 +140,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestNotEqualDateTimeField;
 var
-  LAsString : string;
+  LAsString : String;
   LDateTime: TDateTime;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO <> ''12/31/2021 23:59:59'')';
@@ -155,7 +155,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestNotEqualFloatField;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR <> 10.9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -168,7 +168,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestNotEqualIntegerField;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR <> 10)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -181,7 +181,7 @@ end;
 
 procedure TTestCQLOperatorsEqual.TestNotEqualStringField;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME <> ''VALUE'')';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

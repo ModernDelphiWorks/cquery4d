@@ -44,16 +44,16 @@ uses
 type
   TCQLSerializerMSSQL = class(TCQLSerialize)
   public
-    function AsString(const AAST: ICQLAST): string; override;
+    function AsString(const AAST: ICQLAST): String; override;
   end;
 
 implementation
 
 { TCQLSerializer }
 
-function TCQLSerializerMSSQL.AsString(const AAST: ICQLAST): string;
+function TCQLSerializerMSSQL.AsString(const AAST: ICQLAST): String;
 var
-  LWhere: string;
+  LWhere: String;
 begin
   LWhere := AAST.Where.Serialize;
   // Gera sintaxe para caso exista comando de paginação.

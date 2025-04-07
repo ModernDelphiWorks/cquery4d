@@ -25,7 +25,7 @@ type
     [Test]
     procedure TestMin;
     [Test]
-    procedure TestSubstring;
+    procedure TestSubString;
     [Test]
     procedure TestMonthWhere;
     [Test]
@@ -65,7 +65,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestUpper;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT UPPER(NOME_CLIENTE) AS NOME FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -78,7 +78,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestYearSelect;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT EXTRACT(YEAR FROM NASCTO) FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -90,7 +90,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestYearWhere;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (EXTRACT(YEAR FROM NASCTO) = 9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -103,7 +103,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestMin;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT MIN(ID_CLIENTE) AS IDCOUNT FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -116,7 +116,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestMonthWhere;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (EXTRACT(MONTH FROM NASCTO) = 9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -129,7 +129,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestMonthSelect;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT EXTRACT(MONTH FROM NASCTO) FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -139,14 +139,14 @@ begin
                                       .AsString);
 end;
 
-procedure TTestCQLFunctionsFirebird.TestSubstring;
+procedure TTestCQLFunctionsFirebird.TestSubString;
 var
-  LAsString: string;
+  LAsString: String;
 begin
-  LAsString := 'SELECT SUBSTRING(NOME_CLIENTE FROM 1 FOR 2) AS NOME FROM CLIENTES';
+  LAsString := 'SELECT SUBString(NOME_CLIENTE FROM 1 FOR 2) AS NOME FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
-                                      .Column('NOME_CLIENTE').Substring(1, 2)
+                                      .Column('NOME_CLIENTE').SubString(1, 2)
                                       .&As('NOME')
                                       .From('CLIENTES')
                                       .AsString);
@@ -154,7 +154,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestLower;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT LOWER(NOME_CLIENTE) AS NOME FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -167,7 +167,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestMax;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT MAX(ID_CLIENTE) AS IDCOUNT FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -180,7 +180,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestConcatSelect;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT ''-'' || NOME FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -192,7 +192,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestConcatWhere;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT ''-'' || NOME FROM CLIENTES WHERE (''-'' || NOME = ''-NOME'')';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -205,7 +205,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestCount;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT COUNT(ID_CLIENTE) AS IDCOUNT FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -218,7 +218,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestDate;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE NASCTO = ''02/11/2020''';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -231,7 +231,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestDaySelect;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT EXTRACT(DAY FROM NASCTO) FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -243,7 +243,7 @@ end;
 
 procedure TTestCQLFunctionsFirebird.TestDayWhere;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (EXTRACT(DAY FROM NASCTO) = 9)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

@@ -42,7 +42,7 @@ uses
 type
   TCQLSelectQualifiersMongoDB = class(TCQLSelectQualifiers)
   public
-    function SerializePagination: string; override;
+    function SerializePagination: String; override;
     class function New: TCQLSelectQualifiersMongoDB;
   end;
 
@@ -58,11 +58,11 @@ begin
   Result := Self.Create;
 end;
 
-function TCQLSelectQualifiersMongoDB.SerializePagination: string;
+function TCQLSelectQualifiersMongoDB.SerializePagination: String;
 var
   LFor: Integer;
-  LFirst: string;
-  LSkip: string;
+  LFirst: String;
+  LSkip: String;
 begin
   Result := '';
 //  for LFor := 0 to Count -1 do

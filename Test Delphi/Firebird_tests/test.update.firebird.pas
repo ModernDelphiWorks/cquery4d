@@ -39,7 +39,7 @@ end;
 
 procedure TTestCQLUpdate.TestUpdateFirebird;
 var
-  LAsString: string;
+  LAsString: String;
   LDate: TDate;
   LDateTime: TDateTime;
 begin
@@ -57,7 +57,7 @@ end;
 
 procedure TTestCQLUpdate.TestUpdateWhereFirebird;
 var
-  LAsString: string;
+  LAsString: String;
 begin
   LAsString := 'UPDATE CLIENTES SET ID_CLIENTE = 1, NOME_CLIENTE = ''MyName'' WHERE ID_CLIENTE = 1';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

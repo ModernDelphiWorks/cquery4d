@@ -42,12 +42,12 @@ uses
 type
   TCQLSerialize = class(TInterfacedObject, ICQLSerialize)
   public
-    function AsString(const AAST: ICQLAST): string; virtual;
+    function AsString(const AAST: ICQLAST): String; virtual;
   end;
 
 implementation
 
-function TCQLSerialize.AsString(const AAST: ICQLAST): string;
+function TCQLSerialize.AsString(const AAST: ICQLAST): String;
 begin
   Result := TUtils.Concat([AAST.Select.Serialize,
                            AAST.Delete.Serialize,

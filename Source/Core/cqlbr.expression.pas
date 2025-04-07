@@ -44,28 +44,28 @@ type
     FOperation: TExpressionOperation;
     FLeft: ICQLExpression;
     FRight: ICQLExpression;
-    FTerm: string;
-    function _SerializeWhere(AAddParens: Boolean): string;
-    function _SerializeAND: string;
-    function _SerializeOR: string;
-    function _SerializeOperator: string;
-    function _SerializeFunction: string;
+    FTerm: String;
+    function _SerializeWhere(AAddParens: Boolean): String;
+    function _SerializeAND: String;
+    function _SerializeOR: String;
+    function _SerializeOperator: String;
+    function _SerializeFunction: String;
   protected
     function GetLeft: ICQLExpression;
     function GetOperation: TExpressionOperation;
     function GetRight: ICQLExpression;
-    function GetTerm: string;
+    function GetTerm: String;
     procedure SetLeft(const AValue: ICQLExpression);
     procedure SetOperation(const AValue: TExpressionOperation);
     procedure SetRight(const AValue: ICQLExpression);
-    procedure SetTerm(const AValue: string);
+    procedure SetTerm(const AValue: String);
   public
     class function New: ICQLExpression;
     procedure Assign(const ANode: ICQLExpression);
     procedure Clear;
     function IsEmpty: Boolean;
-    function Serialize(AAddParens: Boolean = False): string;
-    property Term: string read GetTerm write SetTerm;
+    function Serialize(AAddParens: Boolean = False): String;
+    property Term: String read GetTerm write SetTerm;
     property Operation: TExpressionOperation read GetOperation write SetOperation;
     property Left: ICQLExpression read GetLeft write SetLeft;
     property Right: ICQLExpression read GetRight write SetRight;
@@ -78,21 +78,21 @@ type
   protected
     function FindRightmostAnd(const AExpression: ICQLExpression): ICQLExpression;
   public
-    constructor Create(const AExpression: string = ''); overload;
+    constructor Create(const AExpression: String = ''); overload;
     constructor Create(const AExpression: ICQLExpression); overload;
     function &And(const AExpression: array of const): ICQLCriteriaExpression; overload;
-    function &And(const AExpression: string): ICQLCriteriaExpression; overload;
+    function &And(const AExpression: String): ICQLCriteriaExpression; overload;
     function &And(const AExpression: ICQLExpression): ICQLCriteriaExpression; overload;
     function &Or(const AExpression: array of const): ICQLCriteriaExpression; overload;
-    function &Or(const AExpression: string): ICQLCriteriaExpression; overload;
+    function &Or(const AExpression: String): ICQLCriteriaExpression; overload;
     function &Or(const AExpression: ICQLExpression): ICQLCriteriaExpression; overload;
     function &Ope(const AExpression: array of const): ICQLCriteriaExpression; overload;
-    function &Ope(const AExpression: string): ICQLCriteriaExpression; overload;
+    function &Ope(const AExpression: String): ICQLCriteriaExpression; overload;
     function &Ope(const AExpression: ICQLExpression): ICQLCriteriaExpression; overload;
     function &Fun(const AExpression: array of const): ICQLCriteriaExpression; overload;
-    function &Fun(const AExpression: string): ICQLCriteriaExpression; overload;
+    function &Fun(const AExpression: String): ICQLCriteriaExpression; overload;
     function &Fun(const AExpression: ICQLExpression): ICQLCriteriaExpression; overload;
-    function AsString: string;
+    function AsString: String;
     function Expression: ICQLExpression;
   end;
 
@@ -134,7 +134,7 @@ begin
   Result := FRight;
 end;
 
-function TCQLExpression.GetTerm: string;
+function TCQLExpression.GetTerm: String;
 begin
   Result := FTerm;
 end;
@@ -150,7 +150,7 @@ begin
   Result := Self.Create;
 end;
 
-function TCQLExpression.Serialize(AAddParens: Boolean): string;
+function TCQLExpression.Serialize(AAddParens: Boolean): String;
 begin
   if IsEmpty then
     Result := ''
@@ -171,33 +171,33 @@ begin
     end;
 end;
 
-function TCQLExpression._SerializeAND: string;
+function TCQLExpression._SerializeAND: String;
 begin
   Result := TUtils.Concat([FLeft.Serialize(True),
                            'AND',
                            FRight.Serialize(True)]);
 end;
 
-function TCQLExpression._SerializeFunction: string;
+function TCQLExpression._SerializeFunction: String;
 begin
   Result := TUtils.Concat([FLeft.Serialize(False),
                            FRight.Serialize(False)]);
 end;
 
-function TCQLExpression._SerializeOperator: string;
+function TCQLExpression._SerializeOperator: String;
 begin
   Result := '(' + TUtils.Concat([FLeft.Serialize(False),
                                  FRight.Serialize(False)]) + ')';
 end;
 
-function TCQLExpression._SerializeOR: string;
+function TCQLExpression._SerializeOR: String;
 begin
   Result := '(' + TUtils.Concat([FLeft.Serialize(True),
                                  'OR',
                                  FRight.Serialize(True)]) + ')';
 end;
 
-function TCQLExpression._SerializeWhere(AAddParens: Boolean): string;
+function TCQLExpression._SerializeWhere(AAddParens: Boolean): String;
 begin
   if AAddParens then
     Result := TUtils.concat(['(', FTerm, ')'], '')
@@ -220,7 +220,7 @@ begin
   FRight := AValue;
 end;
 
-procedure TCQLExpression.SetTerm(const AValue: string);
+procedure TCQLExpression.SetTerm(const AValue: String);
 begin
   FTerm := AValue;
 end;
@@ -250,7 +250,7 @@ begin
   Result := Self;
 end;
 
-function TCQLCriteriaExpression.&And(const AExpression: string): ICQLCriteriaExpression;
+function TCQLCriteriaExpression.&And(const AExpression: String): ICQLCriteriaExpression;
 var
   LNode: ICQLExpression;
 begin
@@ -264,7 +264,7 @@ begin
   Result := &And(TUtils.SqlParamsToStr(AExpression));
 end;
 
-function TCQLCriteriaExpression.AsString: string;
+function TCQLCriteriaExpression.AsString: String;
 begin
   Result := FExpression.Serialize;
 end;
@@ -280,7 +280,7 @@ begin
   Result := FExpression;
 end;
 
-constructor TCQLCriteriaExpression.Create(const AExpression: string);
+constructor TCQLCriteriaExpression.Create(const AExpression: String);
 begin
   FExpression := TCQLExpression.New;
   if AExpression <> '' then
@@ -303,7 +303,7 @@ begin
   Result := &Fun(TUtils.SqlParamsToStr(AExpression));
 end;
 
-function TCQLCriteriaExpression.Fun(const AExpression: string): ICQLCriteriaExpression;
+function TCQLCriteriaExpression.Fun(const AExpression: String): ICQLCriteriaExpression;
 var
   LNode: ICQLExpression;
 begin
@@ -329,7 +329,7 @@ begin
   Result := &Or(TUtils.SqlParamsToStr(AExpression));
 end;
 
-function TCQLCriteriaExpression.&Or(const AExpression: string): ICQLCriteriaExpression;
+function TCQLCriteriaExpression.&Or(const AExpression: String): ICQLCriteriaExpression;
 var
   LNode: ICQLExpression;
 begin
@@ -343,7 +343,7 @@ begin
   Result := &Ope(TUtils.SqlParamsToStr(AExpression));
 end;
 
-function TCQLCriteriaExpression.&Ope(const AExpression: string): ICQLCriteriaExpression;
+function TCQLCriteriaExpression.&Ope(const AExpression: String): ICQLCriteriaExpression;
 var
   LNode: ICQLExpression;
 begin

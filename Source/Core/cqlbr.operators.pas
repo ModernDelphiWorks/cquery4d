@@ -46,23 +46,23 @@ type
   TCQLOperator = class(TInterfacedObject, ICQLOperator)
   strict private
     FDatabase: TDBName;
-    function _GetColumnName: string;
+    function _GetColumnName: String;
     function _GetCompare: TCQLOperatorCompare;
     function _GetValue: Variant;
     function _GetDataType: TCQLDataFieldType;
-    procedure _SetColumnName(const Value: string);
+    procedure _SetColumnName(const Value: String);
     procedure _SetCompare(const Value: TCQLOperatorCompare);
     procedure _SetValue(const Value: Variant);
     procedure _SetdataType(const Value: TCQLDataFieldType);
-    function _ArrayValueToString: string;
+    function _ArrayValueToString: String;
     constructor CreatePrivate(const ADatabase: TDBName);
   protected
-    FColumnName: string;
+    FColumnName: String;
     FCompare: TCQLOperatorCompare;
     FValue: Variant;
     FDataType: TCQLDataFieldType;
-    function GetOperator: string;
-    function GetCompareValue: string; virtual;
+    function GetOperator: String;
+    function GetCompareValue: String; virtual;
   public
     class function New(const ADatabase: TDBName): ICQLOperator;
     destructor Destroy; override;
@@ -71,74 +71,74 @@ type
     property Compare: TCQLOperatorCompare read _GetCompare write _SetCompare;
     property Value: Variant read _GetValue write _SetValue;
     property DataType: TCQLDataFieldType read _GetDataType write _SetdataType;
-    function AsString: string;
+    function AsString: String;
   end;
 
   TCQLOperators = class(TInterfacedObject, ICQLOperators)
   private
     FDatabase: TDBName;
     constructor CreatePrivate(const ADatabase: TDBName);
-    function CreateOperator(const AColumnName: string;
+    function CreateOperator(const AColumnName: String;
       const AValue: Variant;
       const ACompare: TCQLOperatorCompare;
       const ADataType: TCQLDataFieldType): ICQLOperator;
   public
     class function New(const ADatabase: TDBName): ICQLOperators;
-    function IsEqual(const AValue: Extended) : string; overload;
-    function IsEqual(const AValue: Integer): string; overload;
-    function IsEqual(const AValue: string): string; overload;
-    function IsEqual(const AValue: TDate): string; overload;
-    function IsEqual(const AValue: TDateTime): string; overload;
-    function IsEqual(const AValue: TGUID): string; overload;
-    function IsNotEqual(const AValue: Extended): string; overload;
-    function IsNotEqual(const AValue: Integer): string; overload;
-    function IsNotEqual(const AValue: string): string; overload;
-    function IsNotEqual(const AValue: TDate): string; overload;
-    function IsNotEqual(const AValue: TDateTime): string; overload;
-    function IsNotEqual(const AValue: TGUID): string; overload;
-    function IsGreaterThan(const AValue: Extended): string; overload;
-    function IsGreaterThan(const AValue: Integer): string; overload;
-    function IsGreaterThan(const AValue: TDate): string; overload;
-    function IsGreaterThan(const AValue: TDateTime): string; overload;
-    function IsGreaterEqThan(const AValue: Extended): string; overload;
-    function IsGreaterEqThan(const AValue: Integer): string; overload;
-    function IsGreaterEqThan(const AValue: TDate): string; overload;
-    function IsGreaterEqThan(const AValue: TDateTime): string; overload;
-    function IsLessThan(const AValue: Extended): string; overload;
-    function IsLessThan(const AValue: Integer): string; overload;
-    function IsLessThan(const AValue: TDate): string; overload;
-    function IsLessThan(const AValue: TDateTime): string; overload;
-    function IsLessEqThan(const AValue: Extended): string; overload;
-    function IsLessEqThan(const AValue: Integer) : string; overload;
-    function IsLessEqThan(const AValue: TDate) : string; overload;
-    function IsLessEqThan(const AValue: TDateTime) : string; overload;
-    function IsNull: string;
-    function IsNotNull: string;
-    function IsLike(const AValue: string): string;
-    function IsLikeFull(const AValue: string): string;
-    function IsLikeLeft(const AValue: string): string;
-    function IsLikeRight(const AValue: string): string;
-    function IsNotLike(const AValue: string): string;
-    function IsNotLikeFull(const AValue: string): string;
-    function IsNotLikeLeft(const AValue: string): string;
-    function IsNotLikeRight(const AValue: string): string;
+    function IsEqual(const AValue: Extended) : String; overload;
+    function IsEqual(const AValue: Integer): String; overload;
+    function IsEqual(const AValue: String): String; overload;
+    function IsEqual(const AValue: TDate): String; overload;
+    function IsEqual(const AValue: TDateTime): String; overload;
+    function IsEqual(const AValue: TGUID): String; overload;
+    function IsNotEqual(const AValue: Extended): String; overload;
+    function IsNotEqual(const AValue: Integer): String; overload;
+    function IsNotEqual(const AValue: String): String; overload;
+    function IsNotEqual(const AValue: TDate): String; overload;
+    function IsNotEqual(const AValue: TDateTime): String; overload;
+    function IsNotEqual(const AValue: TGUID): String; overload;
+    function IsGreaterThan(const AValue: Extended): String; overload;
+    function IsGreaterThan(const AValue: Integer): String; overload;
+    function IsGreaterThan(const AValue: TDate): String; overload;
+    function IsGreaterThan(const AValue: TDateTime): String; overload;
+    function IsGreaterEqThan(const AValue: Extended): String; overload;
+    function IsGreaterEqThan(const AValue: Integer): String; overload;
+    function IsGreaterEqThan(const AValue: TDate): String; overload;
+    function IsGreaterEqThan(const AValue: TDateTime): String; overload;
+    function IsLessThan(const AValue: Extended): String; overload;
+    function IsLessThan(const AValue: Integer): String; overload;
+    function IsLessThan(const AValue: TDate): String; overload;
+    function IsLessThan(const AValue: TDateTime): String; overload;
+    function IsLessEqThan(const AValue: Extended): String; overload;
+    function IsLessEqThan(const AValue: Integer) : String; overload;
+    function IsLessEqThan(const AValue: TDate) : String; overload;
+    function IsLessEqThan(const AValue: TDateTime) : String; overload;
+    function IsNull: String;
+    function IsNotNull: String;
+    function IsLike(const AValue: String): String;
+    function IsLikeFull(const AValue: String): String;
+    function IsLikeLeft(const AValue: String): String;
+    function IsLikeRight(const AValue: String): String;
+    function IsNotLike(const AValue: String): String;
+    function IsNotLikeFull(const AValue: String): String;
+    function IsNotLikeLeft(const AValue: String): String;
+    function IsNotLikeRight(const AValue: String): String;
 
-    function IsIn(const AValue: TArray<Double>): string; overload;
+    function IsIn(const AValue: TArray<Double>): String; overload;
 
-    function IsIn(const AValue: TArray<String>): string; overload;
-    function IsIn(const AValue: string): string; overload;
-    function IsNotIn(const AValue: TArray<Double>): string; overload;
-    function IsNotIn(const AValue: TArray<String>): string; overload;
-    function IsNotIn(const AValue: string): string; overload;
-    function IsExists(const AValue: string): string; overload;
-    function IsNotExists(const AValue: string): string; overload;
+    function IsIn(const AValue: TArray<String>): String; overload;
+    function IsIn(const AValue: String): String; overload;
+    function IsNotIn(const AValue: TArray<Double>): String; overload;
+    function IsNotIn(const AValue: TArray<String>): String; overload;
+    function IsNotIn(const AValue: String): String; overload;
+    function IsExists(const AValue: String): String; overload;
+    function IsNotExists(const AValue: String): String; overload;
   end;
 
 implementation
 
 { TCQLOperator }
 
-function TCQLOperator.AsString: string;
+function TCQLOperator.AsString: String;
 begin
   Result := TUtils.Concat([FColumnName, GetOperator, GetCompareValue] );
 end;
@@ -158,7 +158,7 @@ begin
   inherited;
 end;
 
-function TCQLOperator._GetColumnName: string;
+function TCQLOperator._GetColumnName: String;
 begin
   Result := FColumnName;
 end;
@@ -168,7 +168,7 @@ begin
   Result := FCompare;
 end;
 
-function TCQLOperator.GetCompareValue: string;
+function TCQLOperator.GetCompareValue: String;
 begin
   if VarIsNull(FValue) then
     Exit;
@@ -204,7 +204,7 @@ begin
   Result := FDataType;
 end;
 
-function TCQLOperator.GetOperator: string;
+function TCQLOperator.GetOperator: String;
 begin
   case FCompare of
     fcEqual        : Result := '=';
@@ -242,7 +242,7 @@ begin
   Result := Self.CreatePrivate(ADatabase);
 end;
 
-procedure TCQLOperator._SetColumnName(const Value: string);
+procedure TCQLOperator._SetColumnName(const Value: String);
 begin
   FColumnName := Value;
 end;
@@ -262,7 +262,7 @@ begin
   FValue := Value;
 end;
 
-function TCQLOperator._ArrayValueToString: string;
+function TCQLOperator._ArrayValueToString: String;
 var
   LFor: Integer;
   LValue: Variant;
@@ -283,7 +283,7 @@ end;
 
 { TCQLOperators }
 
-function TCQLOperators.CreateOperator(const AColumnName: string;
+function TCQLOperators.CreateOperator(const AColumnName: String;
   const AValue: Variant;
   const ACompare: TCQLOperatorCompare;
   const ADataType: TCQLDataFieldType): ICQLOperator;
@@ -295,12 +295,12 @@ begin
   Result.DataType := ADataType;
 end;
 
-function TCQLOperators.IsEqual(const AValue: Integer): string;
+function TCQLOperators.IsEqual(const AValue: Integer): String;
 begin
   Result := CreateOperator('', AValue, fcEqual, dftInteger).AsString;
 end;
 
-function TCQLOperators.IsEqual(const AValue: Extended): string;
+function TCQLOperators.IsEqual(const AValue: Extended): String;
 begin
   Result := CreateOperator('', AValue, fcEqual, dftFloat).AsString;
 end;
@@ -310,147 +310,147 @@ begin
   FDatabase := ADatabase;
 end;
 
-function TCQLOperators.IsEqual(const AValue: string): string;
+function TCQLOperators.IsEqual(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcEqual, dftString).AsString;
 end;
 
-function TCQLOperators.IsExists(const AValue: string): string;
+function TCQLOperators.IsExists(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcExists, dftText).AsString;
 end;
 
-function TCQLOperators.IsGreaterEqThan(const AValue: Extended): string;
+function TCQLOperators.IsGreaterEqThan(const AValue: Extended): String;
 begin
   Result := CreateOperator('', AValue, fcGreaterEqual, dftFloat).AsString;
 end;
 
-function TCQLOperators.IsGreaterEqThan(const AValue: Integer): string;
+function TCQLOperators.IsGreaterEqThan(const AValue: Integer): String;
 begin
   Result := CreateOperator('', AValue, fcGreaterEqual, dftInteger).AsString;
 end;
 
-function TCQLOperators.IsGreaterThan(const AValue: Integer): string;
+function TCQLOperators.IsGreaterThan(const AValue: Integer): String;
 begin
   Result := CreateOperator('', AValue, fcGreater, dftInteger).AsString;
 end;
 
-function TCQLOperators.IsIn(const AValue: string): string;
+function TCQLOperators.IsIn(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcIn, dftText).AsString;
 end;
 
-function TCQLOperators.IsIn(const AValue: TArray<String>): string;
+function TCQLOperators.IsIn(const AValue: TArray<String>): String;
 begin
   Result := CreateOperator('', AValue, fcIn, dftArray).AsString;
 end;
 
-function TCQLOperators.IsIn(const AValue: TArray<Double>): string;
+function TCQLOperators.IsIn(const AValue: TArray<Double>): String;
 begin
   Result := CreateOperator('', AValue, fcIn, dftArray).AsString;
 end;
 
-function TCQLOperators.IsGreaterThan(const AValue: Extended): string;
+function TCQLOperators.IsGreaterThan(const AValue: Extended): String;
 begin
   Result := CreateOperator('', AValue, fcGreater, dftFloat).AsString;
 end;
 
-function TCQLOperators.IsLessEqThan(const AValue: Extended): string;
+function TCQLOperators.IsLessEqThan(const AValue: Extended): String;
 begin
   Result := CreateOperator('', AValue, fcLessEqual, dftFloat).AsString;
 end;
 
-function TCQLOperators.IsLessEqThan(const AValue: Integer): string;
+function TCQLOperators.IsLessEqThan(const AValue: Integer): String;
 begin
   Result := CreateOperator('', AValue, fcLessEqual, dftInteger).AsString;
 end;
 
-function TCQLOperators.IsLessThan(const AValue: Extended): string;
+function TCQLOperators.IsLessThan(const AValue: Extended): String;
 begin
   Result := CreateOperator('', AValue, fcLess, dftFloat).AsString;
 end;
 
-function TCQLOperators.IsLessThan(const AValue: Integer): string;
+function TCQLOperators.IsLessThan(const AValue: Integer): String;
 begin
   Result := CreateOperator('', AValue, fcLess, dftInteger).AsString;
 end;
 
-function TCQLOperators.IsLike(const AValue: string): string;
+function TCQLOperators.IsLike(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcLike, dftString).AsString;
 end;
 
-function TCQLOperators.IsLikeFull(const AValue: string): string;
+function TCQLOperators.IsLikeFull(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcLikeFull, dftString).AsString;
 end;
 
-function TCQLOperators.IsLikeLeft(const AValue: string): string;
+function TCQLOperators.IsLikeLeft(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcLikeLeft, dftString).AsString;
 end;
 
-function TCQLOperators.IsLikeRight(const AValue: string): string;
+function TCQLOperators.IsLikeRight(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcLikeRight, dftString).AsString;
 end;
 
-function TCQLOperators.IsNotEqual(const AValue: Extended): string;
+function TCQLOperators.IsNotEqual(const AValue: Extended): String;
 begin
   Result := CreateOperator('', AValue, fcNotEqual, dftFloat).AsString;
 end;
 
-function TCQLOperators.IsNotEqual(const AValue: string): string;
+function TCQLOperators.IsNotEqual(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotEqual, dftString).AsString;
 end;
 
-function TCQLOperators.IsNotEqual(const AValue: TDate): string;
+function TCQLOperators.IsNotEqual(const AValue: TDate): String;
 begin
   Result := CreateOperator('', AValue, fcNotEqual, dftDate).AsString;
 end;
 
-function TCQLOperators.IsNotEqual(const AValue: TDateTime): string;
+function TCQLOperators.IsNotEqual(const AValue: TDateTime): String;
 begin
   Result := CreateOperator('', AValue, fcNotEqual, dftDateTime).AsString;
 end;
 
-function TCQLOperators.IsNotExists(const AValue: string): string;
+function TCQLOperators.IsNotExists(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotExists, dftText).AsString;
 end;
 
-function TCQLOperators.IsNotEqual(const AValue: Integer): string;
+function TCQLOperators.IsNotEqual(const AValue: Integer): String;
 begin
   Result := CreateOperator('', AValue, fcNotEqual, dftInteger).AsString;
 end;
 
-function TCQLOperators.IsNotLike(const AValue: string): string;
+function TCQLOperators.IsNotLike(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotLike, dftString).AsString;
 end;
 
-function TCQLOperators.IsNotLikeFull(const AValue: string): string;
+function TCQLOperators.IsNotLikeFull(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotLikeFull, dftString).AsString;
 end;
 
-function TCQLOperators.IsNotLikeLeft(const AValue: string): string;
+function TCQLOperators.IsNotLikeLeft(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotLikeLeft, dftString).AsString;
 end;
 
-function TCQLOperators.IsNotLikeRight(const AValue: string): string;
+function TCQLOperators.IsNotLikeRight(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotLikeRight, dftString).AsString;
 end;
 
-function TCQLOperators.IsNotNull: string;
+function TCQLOperators.IsNotNull: String;
 begin
   Result := CreateOperator('', Null, fcIsNotNull, dftUnknown).AsString;
 end;
 
-function TCQLOperators.IsNull: string;
+function TCQLOperators.IsNull: String;
 begin
   Result := CreateOperator('', Null, fcIsNull, dftUnknown).AsString;
 end;
@@ -460,77 +460,77 @@ begin
   Result := Self.CreatePrivate(ADatabase);
 end;
 
-function TCQLOperators.IsNotIn(const AValue: TArray<String>): string;
+function TCQLOperators.IsNotIn(const AValue: TArray<String>): String;
 begin
   Result := CreateOperator('', AValue, fcNotIn, dftArray).AsString;
 end;
 
-function TCQLOperators.IsNotIn(const AValue: TArray<Double>): string;
+function TCQLOperators.IsNotIn(const AValue: TArray<Double>): String;
 begin
   Result := CreateOperator('', AValue, fcNotIn, dftArray).AsString;
 end;
 
-function TCQLOperators.IsNotIn(const AValue: string): string;
+function TCQLOperators.IsNotIn(const AValue: String): String;
 begin
   Result := CreateOperator('', AValue, fcNotIn, dftText).AsString;
 end;
 
-function TCQLOperators.IsEqual(const AValue: TDateTime): string;
+function TCQLOperators.IsEqual(const AValue: TDateTime): String;
 begin
   Result := CreateOperator('', AValue, fcEqual, dftDateTime).AsString;
 end;
 
-function TCQLOperators.IsEqual(const AValue: TDate): string;
+function TCQLOperators.IsEqual(const AValue: TDate): String;
 begin
   Result := CreateOperator('', AValue, fcEqual, dftDate).AsString;
 end;
 
-function TCQLOperators.IsGreaterEqThan(const AValue: TDateTime): string;
+function TCQLOperators.IsGreaterEqThan(const AValue: TDateTime): String;
 begin
   Result := CreateOperator('', AValue, fcGreaterEqual, dftDateTime).AsString;
 end;
 
-function TCQLOperators.IsGreaterEqThan(const AValue: TDate): string;
+function TCQLOperators.IsGreaterEqThan(const AValue: TDate): String;
 begin
   Result := CreateOperator('', AValue, fcGreaterEqual, dftDate).AsString;
 end;
 
-function TCQLOperators.IsGreaterThan(const AValue: TDate): string;
+function TCQLOperators.IsGreaterThan(const AValue: TDate): String;
 begin
   Result := CreateOperator('', AValue, fcGreater, dftDate).AsString;
 end;
 
-function TCQLOperators.IsGreaterThan(const AValue: TDateTime): string;
+function TCQLOperators.IsGreaterThan(const AValue: TDateTime): String;
 begin
   Result := CreateOperator('', AValue, fcGreater, dftDateTime).AsString;
 end;
 
-function TCQLOperators.IsLessEqThan(const AValue: TDateTime): string;
+function TCQLOperators.IsLessEqThan(const AValue: TDateTime): String;
 begin
   Result := CreateOperator('', AValue, fcLessEqual, dftDateTime).AsString;
 end;
 
-function TCQLOperators.IsLessEqThan(const AValue: TDate): string;
+function TCQLOperators.IsLessEqThan(const AValue: TDate): String;
 begin
   Result := CreateOperator('', AValue, fcLessEqual, dftDate).AsString;
 end;
 
-function TCQLOperators.IsLessThan(const AValue: TDateTime): string;
+function TCQLOperators.IsLessThan(const AValue: TDateTime): String;
 begin
   Result := CreateOperator('', AValue, fcLess, dftDateTime).AsString;
 end;
 
-function TCQLOperators.IsLessThan(const AValue: TDate): string;
+function TCQLOperators.IsLessThan(const AValue: TDate): String;
 begin
   Result := CreateOperator('', AValue, fcLess, dftDate).AsString;
 end;
 
-function TCQLOperators.IsEqual(const AValue: TGUID): string;
+function TCQLOperators.IsEqual(const AValue: TGUID): String;
 begin
   Result := CreateOperator('', AValue.ToString, fcEqual, dftGuid).AsString;
 end;
 
-function TCQLOperators.IsNotEqual(const AValue: TGUID): string;
+function TCQLOperators.IsNotEqual(const AValue: TGUID): String;
 begin
   Result := CreateOperator('', AValue.ToString, fcNotEqual, dftGuid).AsString;
 end;

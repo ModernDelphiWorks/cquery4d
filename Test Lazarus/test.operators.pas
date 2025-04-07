@@ -45,7 +45,7 @@ end;
 
 procedure TTestCQLBrOperators.TestWhereIsNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME IS NULL)';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -58,7 +58,7 @@ end;
 
 procedure TTestCQLBrOperators.TestOrIsNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE ((1 = 1) OR (NOME IS NULL))';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -72,7 +72,7 @@ end;
 
 procedure TTestCQLBrOperators.TestAndIsNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (1 = 1) AND (NOME IS NULL)';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -86,7 +86,7 @@ end;
 
 procedure TTestCQLBrOperators.TestWhereIsNotNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME IS NOT NULL)';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -99,7 +99,7 @@ end;
 
 procedure TTestCQLBrOperators.TestOrIsNotNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE ((1 = 1) OR (NOME IS NOT NULL))';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)
@@ -113,7 +113,7 @@ end;
 
 procedure TTestCQLBrOperators.TestAndIsNotNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (1 = 1) AND (NOME IS NOT NULL)';
   AssertEquals(LAsString, UpperCase(TCQL.New(dbnFirebird)

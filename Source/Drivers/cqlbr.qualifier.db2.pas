@@ -42,7 +42,7 @@ uses
 type
   TCQLSelectQualifiersDB2 = class(TCQLSelectQualifiers)
   public
-    function SerializePagination: string; override;
+    function SerializePagination: String; override;
     class function New: TCQLSelectQualifiersDB2;
   end;
 
@@ -58,11 +58,11 @@ begin
   Result := Self.Create;
 end;
 
-function TCQLSelectQualifiersDB2.SerializePagination: string;
+function TCQLSelectQualifiersDB2.SerializePagination: String;
 var
   LFor: Integer;
-  LFirst: string;
-  LSkip: string;
+  LFirst: String;
+  LSkip: String;
 begin
   LFirst := '';
   LSkip := '';

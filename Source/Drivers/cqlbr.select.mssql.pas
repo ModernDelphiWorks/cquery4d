@@ -43,7 +43,7 @@ type
   TCQLSelectMSSQL = class(TCQLSelect)
   public
     constructor Create; override;
-    function Serialize: string; override;
+    function Serialize: String; override;
   end;
 
 implementation
@@ -61,11 +61,11 @@ begin
   FQualifiers := TCQLSelectQualifiersMSSQL.New;
 end;
 
-function TCQLSelectMSSQL.Serialize: string;
+function TCQLSelectMSSQL.Serialize: String;
 var
   LFor: Integer;
 
-  function DoSerialize: string;
+  function DoSerialize: String;
   begin
     Result := TUtils.Concat(['SELECT',
                              FColumns.Serialize,

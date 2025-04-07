@@ -25,7 +25,7 @@ type
     [Test]
     procedure TestMin;
     [Test]
-    procedure TestSubstring;
+    procedure TestSubString;
     [Test]
     procedure TestMonthWhere;
     [Test]
@@ -139,14 +139,14 @@ begin
                                       .AsString);
 end;
 
-procedure TTestCQLFunctionsDB2.TestSubstring;
+procedure TTestCQLFunctionsDB2.TestSubString;
 var
   LAsString: String;
 begin
-  LAsString := 'SELECT SUBSTRING(NOME_CLIENTE FROM 1 FOR 2) AS NOME FROM CLIENTES';
+  LAsString := 'SELECT SUBString(NOME_CLIENTE FROM 1 FOR 2) AS NOME FROM CLIENTES';
   Assert.AreEqual(LAsString, TCQL.New(dbnDB2)
                                       .Select
-                                      .Column('NOME_CLIENTE').Substring(1, 2)
+                                      .Column('NOME_CLIENTE').SubString(1, 2)
                                       .&As('NOME')
                                       .From('CLIENTES')
                                       .AsString);

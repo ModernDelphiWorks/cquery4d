@@ -42,17 +42,17 @@ uses
 type
   TCQLNameValue  = class(TInterfacedObject, ICQLNameValue)
   strict private
-    FName : string;
-    FValue: string;
-    function _GetName: string;
-    function _GetValue: string;
-    procedure _SetName(const Value: string);
-    procedure _SetValue(const Value: string);
+    FName : String;
+    FValue: String;
+    function _GetName: String;
+    function _GetValue: String;
+    procedure _SetName(const Value: String);
+    procedure _SetValue(const Value: String);
   public
     procedure Clear;
     function IsEmpty: Boolean;
-    property Name: string read _GetName write _SetName;
-    property Value: string read _GetValue write _SetValue;
+    property Name: String read _GetName write _SetName;
+    property Value: String read _GetValue write _SetValue;
   end;
 
   TCQLNameValuePairs = class(TInterfacedObject, ICQLNameValuePairs)
@@ -85,12 +85,12 @@ begin
   FValue := '';
 end;
 
-function TCQLNameValue._GetName: string;
+function TCQLNameValue._GetName: String;
 begin
   Result := FName;
 end;
 
-function TCQLNameValue._GetValue: string;
+function TCQLNameValue._GetValue: String;
 begin
   Result := FValue;
 end;
@@ -100,12 +100,12 @@ begin
   Result := (FName <> '');
 end;
 
-procedure TCQLNameValue._SetName(const Value: string);
+procedure TCQLNameValue._SetName(const Value: String);
 begin
   FName := Value;
 end;
 
-procedure TCQLNameValue._SetValue(const Value: string);
+procedure TCQLNameValue._SetValue(const Value: String);
 begin
   FValue := Value;
 end;

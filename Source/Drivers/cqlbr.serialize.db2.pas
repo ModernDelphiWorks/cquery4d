@@ -43,16 +43,16 @@ uses
 type
   TCQLSerializeDB2 = class(TCQLSerialize)
   public
-    function AsString(const AAST: ICQLAST): string; override;
+    function AsString(const AAST: ICQLAST): String; override;
   end;
 
 implementation
 
 { TCQLSerialize }
 
-function TCQLSerializeDB2.AsString(const AAST: ICQLAST): string;
+function TCQLSerializeDB2.AsString(const AAST: ICQLAST): String;
 var
-  LSerializePagination: string;
+  LSerializePagination: String;
 begin
   Result := inherited AsString(AAST);
   LSerializePagination := AAST.Select.Qualifiers.SerializePagination;

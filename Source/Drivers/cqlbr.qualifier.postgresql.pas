@@ -26,7 +26,7 @@
   @source(Author's Website: https://www.isaquepinheiro.com.br)
 }
 
-unit cqlbr.select.mongodb;
+unit cqlbr.qualifier.postgresql;
 
 {$ifdef fpc}
   {$mode delphi}{$H+}
@@ -36,47 +36,45 @@ interface
 
 uses
   SysUtils,
-  cqlbr.select;
+  cqlbr.interfaces,
+  cqlbr.qualifier;
 
 type
-  TCQLSelectMongoDB = class(TCQLSelect)
+  TCQLSelectQualifiersPostgreSQL = class(TCQLSelectQualifiers)
   public
-    constructor Create; override;
-    function Serialize: String; override;
+    function SerializePagination: String; override;
+    class function New: TCQLSelectQualifiersPostgreSQL;
   end;
 
 implementation
 
-
 uses
-  cqlbr.utils,
-  cqlbr.register,
-  cqlbr.interfaces,
-  cqlbr.qualifier.mongodb;
+  cqlbr.utils;
 
-{ TCQLSelectMongoDB }
+{ TCQLSelectQualifiersPostgreSQL }
 
-constructor TCQLSelectMongoDB.Create;
+class function TCQLSelectQualifiersPostgreSQL.New: TCQLSelectQualifiersPostgreSQL;
 begin
-  inherited;
-  FQualifiers := TCQLSelectQualifiersMongodb.New;
+  Result := Self.Create;
 end;
 
-function TCQLSelectMongoDB.Serialize: String;
+function TCQLSelectQualifiersPostgreSQL.SerializePagination: String;
+var
+  LFor: Integer;
+  LFirst: String;
+  LSkip: String;
 begin
-  if IsEmpty then
-    Result := ''
-  else
+  Result := '';
+  for LFor := 0 to Count -1 do
   begin
-    Result := FTableNames.Serialize + '.find( {'
-            + FColumns.Serialize + '} )';
-    Result := LowerCase(Result);
+    case FQualifiers[LFor].Qualifier of
+      sqFirst: LFirst := TUtils.Concat(['LIMIT', IntToStr(FQualifiers[LFor].Value)]);
+      sqSkip:  LSkip  := TUtils.Concat(['OFFSET', IntToStr(FQualifiers[LFor].Value)]);
+    else
+      raise Exception.Create('TCQLSelectQualifiersPostgreSQL.SerializeSelectQualifiers: Unknown qualifier');
+    end;
   end;
-//                             FQualifiers.SerializeDistinct,
-//                             FQualifiers.SerializePagination,
+  Result := TUtils.Concat([Result, LFirst, LSkip]);
 end;
-
-initialization
-  TCQLBrRegister.RegisterSelect(dbnMongoDB, TCQLSelectMongoDB.Create);
 
 end.

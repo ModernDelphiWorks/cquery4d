@@ -48,7 +48,7 @@ end;
 
 procedure TTestCQLOperators.TestAndIsNotNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (1 = 1) AND (NOME IS NOT NULL)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -62,7 +62,7 @@ end;
 
 procedure TTestCQLOperators.TestAndIsNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (1 = 1) AND (NOME IS NULL)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -76,7 +76,7 @@ end;
 
 procedure TTestCQLOperators.TestOrIsNotNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE ((1 = 1) OR (NOME IS NOT NULL))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -90,7 +90,7 @@ end;
 
 procedure TTestCQLOperators.TestOrIsNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE ((1 = 1) OR (NOME IS NULL))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -104,7 +104,7 @@ end;
 
 procedure TTestCQLOperators.TestWhereIsNotNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME IS NOT NULL)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -117,7 +117,7 @@ end;
 
 procedure TTestCQLOperators.TestWhereIsNull;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME IS NULL)';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

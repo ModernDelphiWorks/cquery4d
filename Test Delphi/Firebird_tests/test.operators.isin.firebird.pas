@@ -50,7 +50,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestInFloat;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR IN (1.5, 2.7, 3))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -63,7 +63,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestInInteger;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR IN (1, 2, 3))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -76,7 +76,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestInString;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR IN (''VALUE.1'', ''VALUE,2'', ''VALUE3''))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -89,7 +89,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestInSubQuery;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (ID IN (SELECT IDCLIENTE FROM PEDIDOS))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -105,7 +105,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestNotInFloat;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR NOT IN (1.5, 2.7, 3))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -118,7 +118,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestNotInInteger;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR NOT IN (1, 2, 3))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -131,7 +131,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestNotInString;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR NOT IN (''VALUE.1'', ''VALUE,2'', ''VALUE3''))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
@@ -144,7 +144,7 @@ end;
 
 procedure TTestCQLOperatorsIN.TestNotInSubQuery;
 var
-  LAsString : string;
+  LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (ID NOT IN (SELECT IDCLIENTE FROM PEDIDOS))';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)

@@ -67,8 +67,8 @@ type
     function ExecutingPagination: Boolean;
     function Count: Integer;
     function IsEmpty: Boolean;
-    function SerializePagination: string; virtual; abstract;
-    function SerializeDistinct: string;
+    function SerializePagination: String; virtual; abstract;
+    function SerializeDistinct: String;
     property Qualifiers[AIdx: Integer]: ICQLSelectQualifier read _GetQualifier; default;
   end;
 
@@ -129,7 +129,7 @@ begin
   Result := (Count = 0);
 end;
 
-function TCQLSelectQualifiers.SerializeDistinct: string;
+function TCQLSelectQualifiers.SerializeDistinct: String;
 var
   LFor: Integer;
 begin

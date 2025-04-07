@@ -26,7 +26,7 @@
   @source(Author's Website: https://www.isaquepinheiro.com.br)
 }
 
-unit cqlbr.select.mongodb;
+unit cqlbr.serialize.postgresql;
 
 {$ifdef fpc}
   {$mode delphi}{$H+}
@@ -36,47 +36,28 @@ interface
 
 uses
   SysUtils,
-  cqlbr.select;
+  cqlbr.utils,
+  cqlbr.register,
+  cqlbr.interfaces,
+  cqlbr.serialize;
 
 type
-  TCQLSelectMongoDB = class(TCQLSelect)
+  TCQLSerializerPostgreSQL = class(TCQLSerialize)
   public
-    constructor Create; override;
-    function Serialize: String; override;
+    function AsString(const AAST: ICQLAST): String; override;
   end;
 
 implementation
 
+{ TCQLSerializer }
 
-uses
-  cqlbr.utils,
-  cqlbr.register,
-  cqlbr.interfaces,
-  cqlbr.qualifier.mongodb;
-
-{ TCQLSelectMongoDB }
-
-constructor TCQLSelectMongoDB.Create;
+function TCQLSerializerPostgreSQL.AsString(const AAST: ICQLAST): String;
 begin
-  inherited;
-  FQualifiers := TCQLSelectQualifiersMongodb.New;
-end;
-
-function TCQLSelectMongoDB.Serialize: String;
-begin
-  if IsEmpty then
-    Result := ''
-  else
-  begin
-    Result := FTableNames.Serialize + '.find( {'
-            + FColumns.Serialize + '} )';
-    Result := LowerCase(Result);
-  end;
-//                             FQualifiers.SerializeDistinct,
-//                             FQualifiers.SerializePagination,
+  Result := inherited AsString(AAST);
+  Result := TUtils.Concat([Result, AAST.Select.Qualifiers.SerializePagination]);
 end;
 
 initialization
-  TCQLBrRegister.RegisterSelect(dbnMongoDB, TCQLSelectMongoDB.Create);
+  TCQLBrRegister.RegisterSerialize(dbnPostgreSQL, TCQLSerializerPostgreSQL.Create);
 
 end.
