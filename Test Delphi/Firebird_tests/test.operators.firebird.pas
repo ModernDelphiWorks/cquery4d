@@ -33,8 +33,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLOperators.Setup;
 begin
@@ -56,7 +56,7 @@ begin
                                  .All
                                  .From('CLIENTES')
                                  .Where('1 = 1')
-                                 .&And('NOME').IsNotNull
+                                 .AndOpe('NOME').IsNotNull
                                  .AsString);
 end;
 
@@ -70,7 +70,7 @@ begin
                                  .All
                                  .From('CLIENTES')
                                  .Where('1 = 1')
-                                 .&And('NOME').IsNull
+                                 .AndOpe('NOME').IsNull
                                  .AsString);
 end;
 
@@ -84,7 +84,7 @@ begin
                                  .All
                                  .From('CLIENTES')
                                  .Where('1 = 1')
-                                 .&Or('NOME').IsNotNull
+                                 .OrOpe('NOME').IsNotNull
                                  .AsString);
 end;
 
@@ -98,7 +98,7 @@ begin
                                  .All
                                  .From('CLIENTES')
                                  .Where('1 = 1')
-                                 .&Or('NOME').IsNull
+                                 .OrOpe('NOME').IsNull
                                  .AsString);
 end;
 

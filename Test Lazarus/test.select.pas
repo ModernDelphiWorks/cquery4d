@@ -32,16 +32,16 @@ type
 implementation
 
 uses
-  cqlbr.interfaces,
-  cqlbr.select.firebird,
-  cqlbr.select.oracle,
-  cqlbr.select.mysql,
-  cqlbr.select.mssql,
-  cqlbr.serialize.firebird,
-  cqlbr.serialize.oracle,
-  cqlbr.serialize.mysql,
-  cqlbr.serialize.mssql,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL.Select.firebird,
+  CQL.Select.oracle,
+  CQL.Select.mysql,
+  CQL.Select.mssql,
+  CQL.Serialize.firebird,
+  CQL.Serialize.oracle,
+  CQL.Serialize.mysql,
+  CQL.Serialize.mssql,
+  CQL;
 
 procedure TTestCQLBrSelect.TestSelectAll;
 var

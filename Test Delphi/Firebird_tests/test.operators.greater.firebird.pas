@@ -28,8 +28,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLOperatorsGreater.Setup;
 begin

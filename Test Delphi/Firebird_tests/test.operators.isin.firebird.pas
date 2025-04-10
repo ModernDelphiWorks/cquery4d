@@ -36,8 +36,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLOperatorsIN.Setup;
 begin
@@ -57,7 +57,7 @@ begin
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where('VALOR').&In([1.5, 2.7, 3])
+                                 .Where('VALOR').InValues([1.5, 2.7, 3])
                                  .AsString);
 end;
 
@@ -70,7 +70,7 @@ begin
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where('VALOR').&In([1, 2, 3])
+                                 .Where('VALOR').InValues([1, 2, 3])
                                  .AsString);
 end;
 
@@ -83,7 +83,7 @@ begin
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where('VALOR').&In(['VALUE.1', 'VALUE,2', 'VALUE3'])
+                                 .Where('VALOR').InValues(['VALUE.1', 'VALUE,2', 'VALUE3'])
                                  .AsString);
 end;
 
@@ -96,7 +96,7 @@ begin
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where('ID').&In( TCQL.New(dbnFirebird)
+                                 .Where('ID').InValues(TCQL.New(dbnFirebird)
                                                         .Select
                                                         .Column('IDCLIENTE')
                                                         .From('PEDIDOS').AsString)

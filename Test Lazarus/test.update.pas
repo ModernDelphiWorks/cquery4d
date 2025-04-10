@@ -25,8 +25,8 @@ type
 implementation
 
 uses
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLBrUpdate.SetUp;
 begin

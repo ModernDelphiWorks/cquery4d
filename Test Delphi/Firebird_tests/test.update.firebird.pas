@@ -24,8 +24,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLUpdate.Setup;
 begin
@@ -48,10 +48,10 @@ begin
   LDateTime := EncodeDate(2021, 12, 31)+EncodeTime(23, 59, 59, 0);
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Update('CLIENTES')
-                                      .&Set('ID_CLIENTE', '1')
-                                      .&Set('NOME_CLIENTE', 'MyName')
-                                      .&Set('DATA_CADASTRO', LDate)
-                                      .&Set('DATA_ALTERACAO', LDateTime)
+                                      .SetValue('ID_CLIENTE', '1')
+                                      .SetValue('NOME_CLIENTE', 'MyName')
+                                      .SetValue('DATA_CADASTRO', LDate)
+                                      .SetValue('DATA_ALTERACAO', LDateTime)
                                       .AsString);
 end;
 
@@ -62,8 +62,8 @@ begin
   LAsString := 'UPDATE CLIENTES SET ID_CLIENTE = 1, NOME_CLIENTE = ''MyName'' WHERE ID_CLIENTE = 1';
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Update('CLIENTES')
-                                      .&Set('ID_CLIENTE', 1)
-                                      .&Set('NOME_CLIENTE', 'MyName')
+                                      .SetValue('ID_CLIENTE', 1)
+                                      .SetValue('NOME_CLIENTE', 'MyName')
                                       .Where('ID_CLIENTE = 1')
                                       .AsString);
 end;

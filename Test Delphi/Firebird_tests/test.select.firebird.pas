@@ -46,8 +46,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLSelect.Setup;
 begin
@@ -84,7 +84,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .All
-                                      .From('CLIENTES').&As('CLI')
+                                      .From('CLIENTES').Alias('CLI')
                                       .AsString);
 end;
 
@@ -136,8 +136,8 @@ begin
                                       .All
                                       .From('CLIENTES')
                                       .Where('ID_CLIENTE = 1')
-                                      .&And('ID').GreaterEqThan(10)
-                                      .&And('ID').LessEqThan(20)
+                                      .AndOpe('ID').GreaterEqThan(10)
+                                      .AndOpe('ID').LessEqThan(20)
                                       .AsString);
 end;
 
@@ -151,8 +151,8 @@ begin
                                       .All
                                       .From('CLIENTES')
                                       .Where('ID_CLIENTE = 1')
-                                      .&And('ID').GreaterEqThan(10)
-                                      .&Or('ID').LessEqThan(20)
+                                      .AndOpe('ID').GreaterEqThan(10)
+                                      .OrOpe('ID').LessEqThan(20)
                                       .AsString);
 end;
 
@@ -179,12 +179,12 @@ begin
                                       .Column('ID_CLIENTE')
                                       .Column('NOME_CLIENTE')
                                       .Column('TIPO_CLIENTE')
-                                      .&Case
-                                        .When('0').&Then(CQL.Q('FISICA'))
-                                        .When('1').&Then(CQL.Q('JURIDICA'))
-                                                  .&Else('''PRODUTOR''')
-                                      .&End
-                                      .&As('TIPO_PESSOA')
+                                      .CaseExpr
+                                        .When('0').IfThen(CQLFun.Q('FISICA'))
+                                        .When('1').IfThen(CQLFun.Q('JURIDICA'))
+                                                  .ElseIf('''PRODUTOR''')
+                                      .EndCase
+                                      .Alias('TIPO_PESSOA')
                                       .From('CLIENTES')
                                       .AsString);
 end;

@@ -22,8 +22,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLInsert.Setup;
 begin
@@ -43,8 +43,8 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Insert
                                       .Into('CLIENTES')
-                                      .&Set('ID_CLIENTE', 1)
-                                      .&Set('NOME_CLIENTE', 'MyName')
+                                      .SetValue('ID_CLIENTE', 1)
+                                      .SetValue('NOME_CLIENTE', 'MyName')
                                       .AsString);
 end;
 

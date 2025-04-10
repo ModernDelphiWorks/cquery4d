@@ -50,8 +50,8 @@ implementation
 
 uses
   SysUtils,
-  cqlbr.interfaces,
-  criteria.query.language;
+  CQL.Interfaces,
+  CQL;
 
 procedure TTestCQLFunctionsFirebird.Setup;
 begin
@@ -71,7 +71,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .Column('NOME_CLIENTE').Upper
-                                      .&As('NOME')
+                                      .Alias('NOME')
                                       .From('CLIENTES')
                                       .AsString);
 end;
@@ -109,7 +109,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .Column('ID_CLIENTE').Min
-                                      .&As('IDCOUNT')
+                                      .Alias('IDCOUNT')
                                       .From('CLIENTES')
                                       .AsString);
 end;
@@ -147,7 +147,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .Column('NOME_CLIENTE').SubString(1, 2)
-                                      .&As('NOME')
+                                      .Alias('NOME')
                                       .From('CLIENTES')
                                       .AsString);
 end;
@@ -160,7 +160,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .Column('NOME_CLIENTE').Lower
-                                      .&As('NOME')
+                                      .Alias('NOME')
                                       .From('CLIENTES')
                                       .AsString);
 end;
@@ -173,7 +173,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .Column('ID_CLIENTE').Max
-                                      .&As('IDCOUNT')
+                                      .Alias('IDCOUNT')
                                       .From('CLIENTES')
                                       .AsString);
 end;
@@ -211,7 +211,7 @@ begin
   Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
                                       .Select
                                       .Column('ID_CLIENTE').Count
-                                      .&As('IDCOUNT')
+                                      .Alias('IDCOUNT')
                                       .From('CLIENTES')
                                       .AsString);
 end;
