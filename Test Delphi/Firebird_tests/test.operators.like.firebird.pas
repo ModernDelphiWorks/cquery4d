@@ -51,7 +51,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME LIKE ''%VALUE%'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -64,7 +64,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME LIKE ''%VALUE'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -77,7 +77,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME LIKE ''VALUE%'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -90,7 +90,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME NOT LIKE ''%VALUE%'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -103,7 +103,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME NOT LIKE ''%VALUE'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -116,7 +116,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME NOT LIKE ''VALUE%'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')

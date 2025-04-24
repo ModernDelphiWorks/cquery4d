@@ -53,7 +53,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR IN (1.5, 2.7, 3))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -66,7 +66,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR IN (1, 2, 3))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -79,7 +79,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR IN (''VALUE.1'', ''VALUE,2'', ''VALUE3''))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -92,11 +92,11 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (ID IN (SELECT IDCLIENTE FROM PEDIDOS))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where('ID').InValues(TCQL.New(dbnFirebird)
+                                 .Where('ID').InValues(CQuery(dbnFirebird)
                                                         .Select
                                                         .Column('IDCLIENTE')
                                                         .From('PEDIDOS').AsString)
@@ -108,7 +108,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR NOT IN (1.5, 2.7, 3))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -121,7 +121,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR NOT IN (1, 2, 3))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -134,7 +134,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR NOT IN (''VALUE.1'', ''VALUE,2'', ''VALUE3''))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -147,11 +147,11 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (ID NOT IN (SELECT IDCLIENTE FROM PEDIDOS))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where('ID').NotIn( TCQL.New(dbnFirebird)
+                                 .Where('ID').NotIn( CQuery(dbnFirebird)
                                                         .Select
                                                         .Column('IDCLIENTE')
                                                         .From('PEDIDOS').AsString)

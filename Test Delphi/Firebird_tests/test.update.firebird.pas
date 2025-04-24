@@ -46,7 +46,7 @@ begin
   LAsString := 'UPDATE CLIENTES SET ID_CLIENTE = ''1'', NOME_CLIENTE = ''MyName'', DATA_CADASTRO = ''12/31/2021'', DATA_ALTERACAO = ''12/31/2021 23:59:59''';
   LDate := EncodeDate(2021, 12, 31);
   LDateTime := EncodeDate(2021, 12, 31)+EncodeTime(23, 59, 59, 0);
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                       .Update('CLIENTES')
                                       .SetValue('ID_CLIENTE', '1')
                                       .SetValue('NOME_CLIENTE', 'MyName')
@@ -60,7 +60,7 @@ var
   LAsString: String;
 begin
   LAsString := 'UPDATE CLIENTES SET ID_CLIENTE = 1, NOME_CLIENTE = ''MyName'' WHERE ID_CLIENTE = 1';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                       .Update('CLIENTES')
                                       .SetValue('ID_CLIENTE', 1)
                                       .SetValue('NOME_CLIENTE', 'MyName')

@@ -60,6 +60,7 @@
         <SanitizedProjectName>PTestFluentCQLFirebird</SanitizedProjectName>
         <VerInfo_Locale>1046</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Define>QUERYABLE;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;vclactnband;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;vcltouch;fmxase;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;Skia.Package.FMX;fmxdae;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;DBEBrConnectionFireDAC;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -100,13 +101,45 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UTestFluent.CQLFirebird.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.Adapters.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.Collections.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.Core.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.Helpers.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.Lazy.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.Consts.pas"/>
-        <DCCReference Include="..\..\..\Fluent4D\Source\Fluent.CQLProvider.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Adapters.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Cast.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Chunk.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Collections.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Concat.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Core.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Distinct.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Exclude.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.GroupBy.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.GroupJoin.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Helpers.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Intersect.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Join.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Json.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Json.Provider.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.OfType.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Order.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.OrderBy.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Select.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SelectIndexed.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SelectMany.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SelectManyCollection.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SelectManyCollectionIndexed.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SelectManyIndexed.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Skip.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SkipWhile.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.SkipWhileIndexed.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Take.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.TakeWhile.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.TakeWhileIndexed.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.ThenBy.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Union.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Where.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Xml.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Xml.Provider.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Zip.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Query.Provider.pas"/>
+        <DCCReference Include="..\..\..\Fluent4D\Source\System.Fluent.Queryable.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

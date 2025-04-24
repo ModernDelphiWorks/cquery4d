@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<test-results name="D:\PROJETOS-Brasil\CQLBr\Test Delphi\Firebird_tests\Win32\Debug\TestCQLBr_Firebird.exe" total="71" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2023-10-18" time="0.006">
+<test-results name="D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\Win32\Debug\TestCQuery_Firebird.exe" total="71" errors="3" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2025-04-10" time="2.105">
   <culture-info current-culture="en" current-uiculture="en" />
-  <test-suite type="Assembly" name="TestCQLBr_Firebird.exe" executed="true" result="Success" success="True" time="0.006" asserts="0">
+  <test-suite type="Assembly" name="TestCQuery_Firebird.exe" executed="true" result="Failure" success="False" time="2.105" asserts="0">
     <results>
-        <test-suite type="Namespace" name="test" executed="true" result="Success" success="True" time="0.006" asserts="0" >
+        <test-suite type="Namespace" name="test" executed="true" result="Success" success="True" time="2.105" asserts="0" >
           <results>
               <test-suite type="Fixture" name="TTestCQLDelete" executed="True" result="Success" success="True" time="0.000" >
                 <results>
@@ -18,7 +18,7 @@
                   <test-case name="TestUpper" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestMax" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestMin" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="TestSubstring" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestSubString" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestMonthWhere" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestMonthSelect" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestDayWhere" executed="True" result="Success" success="True" time="0.000" asserts="0" />
@@ -107,19 +107,46 @@
                     </test-suite>
                 </results>
               </test-suite>
-              <test-suite type="Fixture" name="TTestCQLSelect" executed="True" result="Success" success="True" time="0.001" >
+              <test-suite type="Fixture" name="TTestCQLSelect" executed="True" result="Success" success="True" time="2.101" >
                 <results>
                   <test-case name="TestSelectAll" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="TestSelectAllNoSQL" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestSelectAllNoSQL" executed="True" result="Error" success="False" time="1.296" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ O select do banco MongoDB não está registrado, adicione a unit "CQL.Select.???.pas" onde ??? nome do banco, na cláusula USES do seu projeto! ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
                   <test-case name="TestSelectAllWhere" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestSelectAllWhereAndOr" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestSelectAllWhereAndAnd" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestSelectAllOrderBy" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="TestSelectColumns" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="TestSelectColumnsCase" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestSelectColumnsCase" executed="True" result="Success" success="True" time="0.016" asserts="0" />
                   <test-case name="TestSelectPagingFirebird" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="TestSelectPagingOracle" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="TestSelectPagingMySQL" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestSelectPagingOracle" executed="True" result="Error" success="False" time="0.312" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ O select do banco Oracle não está registrado, adicione a unit "CQL.Select.???.pas" onde ??? nome do banco, na cláusula USES do seu projeto! ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="TestSelectPagingMySQL" executed="True" result="Error" success="False" time="0.469" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ O select do banco MySQL não está registrado, adicione a unit "CQL.Select.???.pas" onde ??? nome do banco, na cláusula USES do seu projeto! ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
                 </results>
               </test-suite>
               <test-suite type="Fixture" name="TTestCQLUpdate" executed="True" result="Success" success="True" time="0.000" >

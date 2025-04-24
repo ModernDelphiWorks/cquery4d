@@ -159,7 +159,6 @@
         <DCCReference Include="..\..\Source\Core\CQL.Name.pas"/>
         <DCCReference Include="..\..\Source\Core\CQL.NameValue.pas"/>
         <DCCReference Include="..\..\Source\Core\CQL.Core.pas"/>
-        <DCCReference Include="..\..\Source\Core\CQL.RegisterDB.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

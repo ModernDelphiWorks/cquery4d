@@ -61,7 +61,7 @@ var
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO = ''12/31/2021'')';
   LDate := EncodeDate(2021, 12, 31);
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -76,7 +76,7 @@ var
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO = ''12/31/2021 23:59:59'')';
   LDateTime := EncodeDate(2021, 12, 31)+EncodeTime(23, 59, 59, 0);
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -89,7 +89,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR = 10.9)';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -102,7 +102,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR = 10)';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -115,7 +115,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME = ''VALUE'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -130,7 +130,7 @@ var
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO <> ''12/31/2021'')';
   LDate := EncodeDate(2021, 12, 31);
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -145,7 +145,7 @@ var
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (DATA_CADASTRO <> ''12/31/2021 23:59:59'')';
   LDateTime := EncodeDate(2021, 12, 31)+EncodeTime(23, 59, 59, 0);
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -158,7 +158,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR <> 10.9)';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -171,7 +171,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (VALOR <> 10)';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
@@ -184,7 +184,7 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOME <> ''VALUE'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')

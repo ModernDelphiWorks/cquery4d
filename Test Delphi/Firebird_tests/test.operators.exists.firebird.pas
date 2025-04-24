@@ -40,11 +40,11 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (EXISTS (SELECT IDCLIENTE FROM PEDIDOS WHERE (PEDIDOS.IDCLIENTE = CLIENTES.IDCLIENTE)))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where.Exists( TCQL.New(dbnFirebird)
+                                 .Where.Exists( CQuery(dbnFirebird)
                                                         .Select
                                                         .Column('IDCLIENTE')
                                                         .From('PEDIDOS')
@@ -58,11 +58,11 @@ var
   LAsString : String;
 begin
   LAsString := 'SELECT * FROM CLIENTES WHERE (NOT EXISTS (SELECT IDCLIENTE FROM PEDIDOS WHERE (PEDIDOS.IDCLIENTE = CLIENTES.IDCLIENTE)))';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                  .Select
                                  .All
                                  .From('CLIENTES')
-                                 .Where.NotExists( TCQL.New(dbnFirebird)
+                                 .Where.NotExists( CQuery(dbnFirebird)
                                                         .Select
                                                         .Column('IDCLIENTE')
                                                         .From('PEDIDOS')

@@ -1,37 +1,97 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Expression.pas',0,1,52,8,97,0,0,,
-File_1=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Cases.pas',0,1,96,14,118,0,0,,
-File_2=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas',0,1,168,58,189,0,0,,
-File_3=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas',0,1,32,48,47,0,0,,
-File_4=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas',0,1,51,40,66,0,0,,
-File_5=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas',0,1,87,40,101,0,0,,
-File_6=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas',0,1,72,56,99,0,0,,
-File_7=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas',0,1,224,45,214,0,0,,
-File_8=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.SelectDB2.pas',0,1,40,17,54,0,0,,
-File_9=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Ast.pas',0,1,78,8,97,0,0,,
-File_10=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsFirebird.pas',0,1,22,1,1,0,0,,
-File_11=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsDB2.pas',0,1,22,1,1,0,0,,
-File_12=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.FunctionsAbstract.pas',0,1,19,1,1,0,0,,
-File_13=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Functions.pas',0,1,57,1,72,0,0,,
-File_14=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Delete.pas',0,1,16,3,39,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\23.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,19858,1,19869,0,0,,
+File_1=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Expression.pas',0,1,52,8,97,0,0,,
+File_2=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Cases.pas',0,1,96,14,118,0,0,,
+File_3=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.SelectDB2.pas',0,1,40,17,54,0,0,,
+File_4=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Ast.pas',0,1,78,8,97,0,0,,
+File_5=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsFirebird.pas',0,1,22,1,1,0,0,,
+File_6=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsDB2.pas',0,1,22,1,1,0,0,,
+File_7=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.FunctionsAbstract.pas',0,1,19,1,1,0,0,,
+File_8=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Functions.pas',0,1,57,1,72,0,0,,
+File_9=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Delete.pas',0,1,16,3,39,0,0,,
 
 [Modules]
 Module0=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.pas
-Module1=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Interfaces.pas
-Count=2
+Module1=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
+Module2=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
+Module3=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj
+Module4=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
+Module5=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
+Module6=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
+Module7=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
+Module8=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
+Module9=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
+Module10=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
+Module11=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
+Module12=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
+Module13=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
+Module14=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Interfaces.pas
+Count=15
 EditWindowCount=1
 
 [D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj]
+ModuleType=TBaseProject
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas]
+ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas]
 ModuleType=TSourceModule
 
 [D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Interfaces.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=2
+ViewCount=15
 CurrentEditView=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.pas
 View0=0
 View1=1
+View2=2
+View3=3
+View4=4
+View5=5
+View6=6
+View7=7
+View8=8
+View9=9
+View10=10
+View11=11
+View12=12
+View13=13
+View14=14
 PercentageSizes=1
 Create=1
 Visible=1
@@ -55,9 +115,9 @@ TopPanelSize=0
 LeftPanelSize=1484
 LeftPanelClients=PropertyInspector,DockSite3
 LeftPanelData=00000800010100000000A91100000000000001CC0500000000000001000000005C0E000009000000446F636B53697465330100000000651F00001100000050726F7065727479496E73706563746F72FFFFFFFF
-RightPanelSize=2208
+RightPanelSize=1729
 RightPanelClients=DockSite2
-RightPanelData=00000800010100000000A91100000000000001A0080000000000000100000000651F000009000000446F636B5369746532FFFFFFFF
+RightPanelData=00000800010100000000A91100000000000001C1060000000000000100000000651F000009000000446F636B5369746532FFFFFFFF
 BottomPanelSize=0
 BottomPanelClients=DockSite1
 BottomPanelData=0000080001000100000009000000446F636B5369746531B944000000000000001D06000000000000FFFFFFFF
@@ -70,9 +130,9 @@ TabDockRightClients=DockSite4=0
 [View0]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.pas
-CursorX=17
-CursorY=138
-TopLine=44
+CursorX=1
+CursorY=495
+TopLine=484
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -80,10 +140,153 @@ EditViewName=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.pas
 
 [View1]
 CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
+CursorX=1
+CursorY=39
+TopLine=54
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
+
+[View2]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
+CursorX=1
+CursorY=83
+TopLine=69
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
+
+[View3]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
+CursorX=36
+CursorY=63
+TopLine=36
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
+
+[View4]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
+CursorX=1
+CursorY=49
+TopLine=31
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
+
+[View5]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
+CursorX=36
+CursorY=43
+TopLine=29
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
+
+[View6]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
+CursorX=36
+CursorY=249
+TopLine=222
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
+
+[View7]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
+CursorX=36
+CursorY=187
+TopLine=160
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
+
+[View8]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
+CursorX=58
+CursorY=65
+TopLine=38
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
+
+[View9]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
+CursorX=36
+CursorY=123
+TopLine=96
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
+
+[View10]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
+CursorX=36
+CursorY=88
+TopLine=61
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
+
+[View11]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
+CursorX=60
+CursorY=154
+TopLine=127
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
+
+[View12]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
+CursorX=36
+CursorY=88
+TopLine=61
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
+
+[View13]
+CustomEditViewType=TEditView
+Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
+CursorX=36
+CursorY=119
+TopLine=92
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
+
+[View14]
+CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Interfaces.pas
 CursorX=21
 CursorY=137
-TopLine=125
+TopLine=56
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -153,11 +356,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=2208
+Width=1729
 Height=7794
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2208
+ClientWidth=1729
 ClientHeight=7794
 TBDockHeight=5902
 LRDockWidth=2349
@@ -170,15 +373,15 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=1
-Top=40
-Width=9885
-Height=284
+Left=10
+Top=1010
+Width=2771
+Height=1118
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=9885
-ClientHeight=284
-TBDockHeight=284
+ClientWidth=2771
+ClientHeight=1118
+TBDockHeight=1118
 LRDockWidth=2771
 Dockable=1
 StayOnTop=0
@@ -191,12 +394,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=2000
-Height=8392
+Width=1906
+Height=7931
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2000
-ClientHeight=8392
+ClientWidth=1906
+ClientHeight=7931
 TBDockHeight=7157
 LRDockWidth=2000
 Dockable=1
@@ -218,7 +421,7 @@ ClientWidth=1484
 ClientHeight=4265
 PixelsPerInch=120
 MonitorNum=0
-TBDockHeight=8392
+TBDockHeight=9010
 LRDockWidth=1484
 Dockable=1
 StayOnTop=0
@@ -233,11 +436,11 @@ State=0
 Left=0
 Top=0
 Width=1729
-Height=8029
+Height=5902
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1729
-ClientHeight=8029
+ClientHeight=5902
 TBDockHeight=5961
 LRDockWidth=2510
 Dockable=1
@@ -249,8 +452,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=0
-Top=0
+Left=-17
+Top=316
 Width=276
 Height=363
 MaxLeft=-1
@@ -261,8 +464,8 @@ TBDockHeight=363
 LRDockWidth=276
 Dockable=1
 StayOnTop=0
-Name=26
-Description=70
+Name=9
+Description=23
 filter=1
 
 [DebugLogView]
@@ -354,11 +557,11 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1118
+Height=1010
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1118
+ClientHeight=1010
 TBDockHeight=2500
 LRDockWidth=3401
 Dockable=1
@@ -373,11 +576,11 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1118
+Height=882
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1118
+ClientHeight=882
 TBDockHeight=2324
 LRDockWidth=2823
 Dockable=1
@@ -411,11 +614,11 @@ State=0
 Left=0
 Top=0
 Width=2339
-Height=1010
+Height=1118
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2339
-ClientHeight=1010
+ClientHeight=1118
 TBDockHeight=1157
 LRDockWidth=3677
 Dockable=1
@@ -438,11 +641,11 @@ State=0
 Left=0
 Top=0
 Width=1729
-Height=8029
+Height=5902
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1729
-ClientHeight=8029
+ClientHeight=5902
 TBDockHeight=4882
 LRDockWidth=7151
 Dockable=1
@@ -454,8 +657,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=0
-Top=0
+Left=384
+Top=793
 Width=2854
 Height=3206
 MaxLeft=-1
@@ -473,8 +676,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-47
-Top=-229
+Left=-10
+Top=-154
 Width=1849
 Height=3137
 MaxLeft=-1
@@ -578,11 +781,11 @@ State=0
 Left=0
 Top=0
 Width=1729
-Height=8029
+Height=5902
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1729
-ClientHeight=8029
+ClientHeight=5902
 TBDockHeight=4882
 LRDockWidth=5307
 Dockable=1
@@ -644,8 +847,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=8
-Top=8
+Left=0
+Top=36
 Width=3823
 Height=1422
 MaxLeft=-1
@@ -672,16 +875,16 @@ Docked=1
 State=0
 Left=0
 Top=36
-Width=2208
+Width=1729
 Height=8157
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2208
+ClientWidth=1729
 ClientHeight=8157
 PixelsPerInch=120
 MonitorNum=0
 TBDockHeight=8392
-LRDockWidth=2208
+LRDockWidth=1729
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -706,7 +909,7 @@ ClientWidth=1484
 ClientHeight=3441
 PixelsPerInch=120
 MonitorNum=0
-TBDockHeight=8392
+TBDockHeight=9010
 LRDockWidth=1484
 Dockable=1
 StayOnTop=0
@@ -728,8 +931,8 @@ Width=2000
 Height=8392
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2000
-ClientHeight=8392
+ClientWidth=1906
+ClientHeight=7931
 PixelsPerInch=120
 MonitorNum=0
 TBDockHeight=8392

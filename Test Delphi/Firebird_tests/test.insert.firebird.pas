@@ -40,7 +40,7 @@ var
   LAsString: String;
 begin
   LAsString := 'INSERT INTO CLIENTES (ID_CLIENTE, NOME_CLIENTE) VALUES (1, ''MyName'')';
-  Assert.AreEqual(LAsString, TCQL.New(dbnFirebird)
+  Assert.AreEqual(LAsString, CQuery(dbnFirebird)
                                       .Insert
                                       .Into('CLIENTES')
                                       .SetValue('ID_CLIENTE', 1)

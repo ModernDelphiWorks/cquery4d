@@ -79,8 +79,7 @@ uses
   CQL.Section in '..\..\Source\Core\CQL.Section.pas',
   CQL.Name in '..\..\Source\Core\CQL.Name.pas',
   CQL.NameValue in '..\..\Source\Core\CQL.NameValue.pas',
-  CQL.Core in '..\..\Source\Core\CQL.Core.pas',
-  CQL.RegisterDB in '..\..\Source\Core\CQL.RegisterDB.pas';
+  CQL.Core in '..\..\Source\Core\CQL.Core.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

@@ -4,21 +4,16 @@ interface
 
 uses
   DUnitX.TestFramework,
-  Fluent.Core,
-  Fluent.CQLProvider,
-  CQL.SerializeFirebird,
-  CQL.SelectFirebird,
-  CQL.Interfaces,
   Generics.Collections,
-  System.Rtti;
+  System.Rtti,
+  System.Fluent,
+  System.Fluent.Queryable;
 
 type
   [TestFixture]
   TTestFluentCQLFirebird = class
   private
-    FProvider: IFluentProvider<String>;
-    FEnum: IFluentEnumerable<String>;
-    function GetSQL: string;
+    FEnum: IFluentQueryable<String>;
   public
     [Setup]
     procedure Setup;
@@ -34,43 +29,45 @@ type
     procedure TestSelectWithJoin;
     [Test]
     procedure TestMinValue;
+    [Test]
+    procedure TestMaxValue;
+    [Test]
+    procedure TestFromBeforeSelect;
+    [Test]
+    procedure TestSelectBeforeWhere;
+    [Test]
+    procedure TestWhereJoinSelect;
+    [Test]
+    procedure TestGroupBy;
   end;
 
 implementation
 
-function TTestFluentCQLFirebird.GetSQL: string;
-begin
-  Result := (FProvider as TFluentProvider<String>).AsString;
-end;
-
 procedure TTestFluentCQLFirebird.Setup;
 begin
-  FProvider := TFluentProvider<String>.Create(dbnFirebird);
-  FEnum := IFluentEnumerable<String>.Create(nil, FProvider);
+  FEnum := IFluentQueryable<String>.CreateForDatabase(TDBName.dbnFirebird);
 end;
 
 procedure TTestFluentCQLFirebird.TearDown;
 begin
-  FEnum := Default(IFluentEnumerable<String>);
-  FProvider := nil;
 end;
 
 procedure TTestFluentCQLFirebird.TestSelectAllFromClientes;
 begin
   FEnum.Select.From('CLIENTES');
-  Assert.AreEqual('SELECT * FROM CLIENTES', GetSQL, 'SQL gerado incorreto');
+  Assert.AreEqual('SELECT * FROM CLIENTES', FEnum.AsString, 'SQL gerado incorreto');
 end;
 
 procedure TTestFluentCQLFirebird.TestSelectWhereNome;
 begin
-  FEnum.Select.From('CLIENTES').Where('NOME > ''B''');
-  Assert.AreEqual('SELECT * FROM CLIENTES WHERE NOME > ''B''', GetSQL, 'SQL gerado incorreto');
+  FEnum.From('CLIENTES').Select.Where('NOME > ''B''');
+  Assert.AreEqual('SELECT * FROM CLIENTES WHERE NOME > ''B''', FEnum.AsString, 'SQL gerado incorreto');
 end;
 
 procedure TTestFluentCQLFirebird.TestSelectWithAlias;
 begin
   FEnum.Select.From('CLIENTES').Alias('C').Where('C.NOME = ''Ana''');
-  Assert.AreEqual('SELECT * FROM CLIENTES AS C WHERE C.NOME = ''Ana''', GetSQL, 'SQL gerado incorreto');
+  Assert.AreEqual('SELECT * FROM CLIENTES AS C WHERE C.NOME = ''Ana''', FEnum.AsString, 'SQL gerado incorreto');
 end;
 
 procedure TTestFluentCQLFirebird.TestSelectWithJoin;
@@ -79,21 +76,54 @@ begin
        .InnerJoin('PEDIDOS', 'P')
        .OnCond('C.ID = P.ID_CLIENTE');
   Assert.AreEqual('SELECT * FROM CLIENTES AS C INNER JOIN PEDIDOS AS P ON C.ID = P.ID_CLIENTE',
-                  GetSQL, 'SQL gerado incorreto');
+                  FEnum.AsString, 'SQL gerado incorreto');
 end;
 
 procedure TTestFluentCQLFirebird.TestMinValue;
 var
-  EnumInt: IFluentEnumerable<Integer>;
-  ProviderInt: IFluentProvider<Integer>;
+  EnumInt: IFluentQueryable<Integer>;
 begin
-  ProviderInt := TFluentProvider<Integer>.Create(dbnFirebird);
-  EnumInt := IFluentEnumerable<Integer>.Create(nil, ProviderInt);
+  EnumInt := IFluentQueryable<Integer>.CreateForDatabase(TDBName.dbnFirebird);
   EnumInt.Select('ID').From('PEDIDOS');
-  Assert.AreEqual('SELECT MIN(ID) FROM PEDIDOS', ProviderInt.Min.AsString, 'SQL gerado incorreto');
+  EnumInt.Min;
+  Assert.AreEqual('SELECT MIN(ID) FROM PEDIDOS', EnumInt.AsString, 'SQL gerado incorreto');
+end;
+
+procedure TTestFluentCQLFirebird.TestMaxValue;
+var
+  EnumInt: IFluentQueryable<Integer>;
+begin
+  EnumInt := IFluentQueryable<Integer>.CreateForDatabase(TDBName.dbnFirebird);
+  EnumInt.Select('ID').From('PEDIDOS');
+  EnumInt.Max;
+  Assert.AreEqual('SELECT MAX(ID) FROM PEDIDOS', EnumInt.AsString, 'SQL gerado incorreto');
+end;
+
+procedure TTestFluentCQLFirebird.TestFromBeforeSelect;
+begin
+  FEnum.From('CLIENTES').Select;
+  Assert.AreEqual('SELECT * FROM CLIENTES', FEnum.AsString, 'SQL gerado incorreto');
+end;
+
+procedure TTestFluentCQLFirebird.TestSelectBeforeWhere;
+begin
+  FEnum.Select.Where('NOME = ''Ana''').From('CLIENTES');
+  Assert.AreEqual('SELECT * FROM CLIENTES WHERE NOME = ''Ana''', FEnum.AsString, 'SQL gerado incorreto');
+end;
+
+procedure TTestFluentCQLFirebird.TestWhereJoinSelect;
+begin
+  FEnum.Where('NOME > ''B''').InnerJoin('PEDIDOS', 'P').OnCond('CLIENTES.ID = P.ID_CLIENTE').Select.From('CLIENTES');
+  Assert.AreEqual('SELECT * FROM CLIENTES INNER JOIN PEDIDOS AS P ON CLIENTES.ID = P.ID_CLIENTE WHERE NOME > ''B''',
+                  FEnum.AsString, 'SQL gerado incorreto');
+end;
+
+procedure TTestFluentCQLFirebird.TestGroupBy;
+begin
+  FEnum.Select('COUNT(*)').From('PEDIDOS').GroupBy('CLIENTE_ID');
+  Assert.AreEqual('SELECT COUNT(*) FROM PEDIDOS GROUP BY CLIENTE_ID', FEnum.AsString, 'SQL gerado incorreto');
 end;
 
 initialization
   TDUnitX.RegisterTestFixture(TTestFluentCQLFirebird);
-
 end.
