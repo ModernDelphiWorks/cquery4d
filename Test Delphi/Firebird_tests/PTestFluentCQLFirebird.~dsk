@@ -8,12 +8,15 @@ File_5=TSourceModule,'D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Adapters.
 File_6=TSourceModule,'D:\PROJETOS-Brasil\DBEngine4D\Test Delphi\Tests.Driver.Memory.pas',0,1,1,1,298,0,0,,
 
 [Modules]
-Module0=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Queryable.pas
-Module1=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Query.Provider.pas
-Module2=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Zip.pas
-Module3=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\UTestFluent.CQLFirebird.pas
+Module0=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\UTestFluent.CQLFirebird.pas
+Module1=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Queryable.pas
+Module2=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Query.Provider.pas
+Module3=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Zip.pas
 Count=4
 EditWindowCount=1
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\UTestFluent.CQLFirebird.pas]
+ModuleType=TSourceModule
 
 [D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Queryable.pas]
 ModuleType=TSourceModule
@@ -24,12 +27,9 @@ ModuleType=TSourceModule
 [D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Zip.pas]
 ModuleType=TSourceModule
 
-[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\UTestFluent.CQLFirebird.pas]
-ModuleType=TSourceModule
-
 [EditWindow0]
 ViewCount=4
-CurrentEditView=D:\PROJETOS-Brasil\Fluent4D\Source\System.Fluent.Queryable.pas
+CurrentEditView=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\UTestFluent.CQLFirebird.pas
 View0=0
 View1=1
 View2=2
@@ -72,9 +72,9 @@ TabDockRightClients=DockSite4=0
 [View0]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\UTestFluent.CQLFirebird.pas
-CursorX=5
-CursorY=129
-TopLine=1
+CursorX=7
+CursorY=9
+TopLine=4
 LeftCol=1
 Elisions=
 Bookmarks=
