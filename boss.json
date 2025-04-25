@@ -1,9 +1,9 @@
 {
-	"name": "CQLBr",
-	"description": "Criteria Query Language for Delphi",
-	"version": "1.1.6",
-	"homepage": "www.isaquepinheiro.com.br",
-	"mainsrc": "Source/",
+	"name": "CQuery4D",
+	"description": "A modern and extensible query framework supporting multiple databases",
+	"version": "1.0.0",
+	"homepage": "https://github.com/moderndelphiworks",
+	"mainsrc": "./Source",
 	"projects": [],
 	"dependencies": {}
 }
