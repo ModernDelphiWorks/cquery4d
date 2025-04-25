@@ -12,26 +12,29 @@ File_9=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Functions.pas'
 File_10=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Delete.pas',0,1,16,3,39,0,0,,
 
 [Modules]
-Module0=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj
+Module0=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
 Module1=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
-Module2=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
-Module3=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
-Module4=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
-Module5=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
-Module6=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
-Module7=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
-Module8=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
-Module9=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
-Module10=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
+Module2=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj
+Module3=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
+Module4=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
+Module5=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
+Module6=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
+Module7=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
+Module8=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
+Module9=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
+Module10=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
 Module11=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
 Count=12
 EditWindowCount=1
 
-[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj]
-ModuleType=TBaseProject
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas]
+ModuleType=TSourceModule
 
 [D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas]
 ModuleType=TSourceModule
+
+[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj]
+ModuleType=TBaseProject
 
 [D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas]
 ModuleType=TSourceModule
@@ -57,15 +60,12 @@ ModuleType=TSourceModule
 [D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas]
 ModuleType=TSourceModule
 
-[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas]
-ModuleType=TSourceModule
-
 [D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
 ViewCount=12
-CurrentEditView=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
+CurrentEditView=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
 View0=0
 View1=1
 View2=2
@@ -117,8 +117,8 @@ TabDockRightClients=DockSite4=0
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
 CursorX=1
-CursorY=58
-TopLine=75
+CursorY=1
+TopLine=55
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -160,9 +160,9 @@ EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.
 [View4]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
-CursorX=36
-CursorY=249
-TopLine=222
+CursorX=1
+CursorY=1
+TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=

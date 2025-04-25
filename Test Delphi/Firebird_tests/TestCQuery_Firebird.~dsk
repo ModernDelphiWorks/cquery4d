@@ -1,34 +1,31 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\23.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,19858,1,19869,0,0,,
-File_1=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Expression.pas',0,1,52,8,97,0,0,,
-File_2=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Cases.pas',0,1,96,14,118,0,0,,
-File_3=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.SelectDB2.pas',0,1,40,17,54,0,0,,
-File_4=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Ast.pas',0,1,78,8,97,0,0,,
-File_5=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsFirebird.pas',0,1,22,1,1,0,0,,
-File_6=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsDB2.pas',0,1,22,1,1,0,0,,
-File_7=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.FunctionsAbstract.pas',0,1,19,1,1,0,0,,
-File_8=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Functions.pas',0,1,57,1,72,0,0,,
-File_9=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Delete.pas',0,1,16,3,39,0,0,,
+File_0=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas',0,1,1,1,39,0,0,,
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\23.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,19858,1,19869,0,0,,
+File_2=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Expression.pas',0,1,52,8,97,0,0,,
+File_3=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Cases.pas',0,1,96,14,118,0,0,,
+File_4=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.SelectDB2.pas',0,1,40,17,54,0,0,,
+File_5=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Ast.pas',0,1,78,8,97,0,0,,
+File_6=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsFirebird.pas',0,1,22,1,1,0,0,,
+File_7=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Drivers\CQL.FunctionsDB2.pas',0,1,22,1,1,0,0,,
+File_8=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.FunctionsAbstract.pas',0,1,19,1,1,0,0,,
+File_9=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Functions.pas',0,1,57,1,72,0,0,,
+File_10=TSourceModule,'D:\PROJETOS-Brasil\CQuery4D\Source\Core\CQL.Delete.pas',0,1,16,3,39,0,0,,
 
 [Modules]
-Module0=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
-Module1=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj
-Module2=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
-Module3=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
-Module4=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
-Module5=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
-Module6=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
-Module7=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
-Module8=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
-Module9=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
-Module10=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
-Module11=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
-Module12=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
-Count=13
+Module0=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj
+Module1=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
+Module2=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
+Module3=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
+Module4=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
+Module5=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
+Module6=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
+Module7=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
+Module8=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
+Module9=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
+Module10=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
+Module11=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
+Count=12
 EditWindowCount=1
-
-[D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas]
-ModuleType=TSourceModule
 
 [D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dproj]
 ModuleType=TBaseProject
@@ -67,8 +64,8 @@ ModuleType=TSourceModule
 ModuleType=TSourceModule
 
 [EditWindow0]
-ViewCount=13
-CurrentEditView=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
+ViewCount=12
+CurrentEditView=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
 View0=0
 View1=1
 View2=2
@@ -81,7 +78,6 @@ View8=8
 View9=9
 View10=10
 View11=11
-View12=12
 PercentageSizes=1
 Create=1
 Visible=1
@@ -119,27 +115,16 @@ TabDockRightClients=DockSite4=0
 
 [View0]
 CustomEditViewType=TEditView
-Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
-CursorX=1
-CursorY=39
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.select.firebird.pas
-
-[View1]
-CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
 CursorX=1
-CursorY=83
-TopLine=69
+CursorY=58
+TopLine=54
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\TestCQuery_Firebird.dpr
 
-[View2]
+[View1]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
 CursorX=36
@@ -150,7 +135,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.update.firebird.pas
 
-[View3]
+[View2]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
 CursorX=1
@@ -161,7 +146,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.delete.firebird.pas
 
-[View4]
+[View3]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
 CursorX=36
@@ -172,7 +157,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.insert.firebird.pas
 
-[View5]
+[View4]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
 CursorX=36
@@ -183,7 +168,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.functions.firebird.pas
 
-[View6]
+[View5]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
 CursorX=36
@@ -194,7 +179,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.equal.firebird.pas
 
-[View7]
+[View6]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
 CursorX=58
@@ -205,7 +190,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.exists.firebird.pas
 
-[View8]
+[View7]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
 CursorX=36
@@ -216,7 +201,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.firebird.pas
 
-[View9]
+[View8]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
 CursorX=36
@@ -227,7 +212,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.greater.firebird.pas
 
-[View10]
+[View9]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
 CursorX=60
@@ -238,7 +223,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.isin.firebird.pas
 
-[View11]
+[View10]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
 CursorX=36
@@ -249,7 +234,7 @@ Elisions=
 Bookmarks=
 EditViewName=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.less.firebird.pas
 
-[View12]
+[View11]
 CustomEditViewType=TEditView
 Module=D:\PROJETOS-Brasil\CQuery4D\Test Delphi\Firebird_tests\test.operators.like.firebird.pas
 CursorX=36

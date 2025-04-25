@@ -1,5 +1,5 @@
 {
-               CQuery4D - Fluent SQL Framework for Delphi
+               CQuery4D: Fluent SQL Framework for Delphi
 
                           Apache License
                       Version 2.0, January 2004
@@ -19,7 +19,7 @@
 }
 
 {
-  @abstract(CQuery4D - Fluent SQL Framework for Delphi)
+  @abstract(CQuery4D: Fluent SQL Framework for Delphi)
   @description(A modern and extensible query framework supporting multiple databases)
   @created(03 Apr 2025)
   @author(Isaque Pinheiro)
@@ -243,4 +243,5 @@ begin
 end;
 
 end.
+
 
